@@ -1,0 +1,681 @@
+@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&family=Poppins&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #090429f6;
+}
+
+.logo {
+    width: 100px;
+    /* margin-left: -2%; */
+    height: auto;
+
+}
+
+.navbar {
+    margin: 0 auto;
+    width: 1280px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.navbar h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6%;
+    color: #fff;
+    line-height: 30px;
+    letter-spacing: 0.115em;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+nav {
+    margin-top: 0.6%;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navdiv {
+    padding: 1%;
+    display: flex;
+    margin-left: 20%;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.navdiv a {
+    padding: 10px 35px;
+}
+
+.signup {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    background-color: #fff;
+    color: #000;
+}
+
+.land {
+    background: rgba(0, 0, 0, 0.883);
+    border-radius: 40px;
+    width: 1250px;
+    height: 550px;
+    border-radius: 25px;
+    background: url("../assests/Cloud\ Your\ Story\ \(1980\ ×\ 1220px\).png");
+    background-color: rgba(0, 0, 0, 0.721);
+    border-radius: 20px;
+    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.searchbar {
+    box-sizing: border-box;
+    position: absolute;
+    width: 800px;
+    height: 40px;
+    left: 10px;
+    outline: none;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background: none;
+    border: none;
+}
+
+::placeholder {
+    margin-left: -12%;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 5%;
+    color: #fff;
+    letter-spacing: 0.3rem;
+}
+
+.search-icon {
+    font-size: 1.5rem;
+    margin-left: 94%;
+    cursor: pointer;
+    color: #fff;
+}
+
+.tempDetail {
+    position: absolute;
+    margin-top: 0.6%;
+    margin-left: 37%;
+}
+
+.temp {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+    margin-top: -4%;
+}
+
+.temp span {
+    font-size: 3.5rem;
+}
+
+.weather-i {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: 42%;
+    top: 2%;
+}
+
+.loca {
+    display: flex;
+    flex-direction: row;
+    margin-left: -12%;
+    margin-top: -6%;
+}
+
+.location-pin {
+    width: 40px;
+    margin-top: 4%;
+    position: absolute;
+    /* position: absolute;
+    left: -28%;
+    top: 85%; */
+}
+
+.location {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bolder;
+    margin-left: 12%;
+    margin-top: 1%;
+
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    margin-top: -2%;
+}
+
+.live-time {
+    color: #fff;
+    font-size: 2rem;
+    margin-left: -10%;
+    font-family: 'Poppins', sans-serif;
+    /* border-right: 1px solid black ; */
+
+}
+
+.border-r {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-left: 5%;
+    color: #fff;
+    margin-top: 1%;
+}
+
+/* .search-icon :hover{
+   
+} */
+
+.live-day {
+    margin-left: 10%;
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.forecast {
+    margin-top: 17%;
+    margin-left: 5%;
+    width: 450px;
+    height: 250px;
+    border-radius: 25px;
+    /* border: 1px solid black; */
+    background: linear-gradient(143.86deg, #f0f0f0 1.34%, #b091b3 97.09%);
+    background: transparent;
+    mix-blend-mode: color-dodge;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.forecast h3 {
+    margin-left: 10%;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+
+
+}
+
+.forecast hr {
+    margin-left: 18%;
+    width: 70%;
+}
+
+.weather-tbl {
+    width: 100%;
+    margin-top: 4%;
+    margin-left: 3%;
+
+}
+
+td {
+    color: #fff;
+    padding: 1.5%;
+    width: 80px;
+}
+
+
+.hourly-forecast {
+    margin-top: -17.2%;
+    margin-left: 40%;
+    float: right;
+    position: absolute;
+    width: 650px;
+    height: 150px;
+    border-radius: 25px;
+    background: linear-gradient(143.86deg, #f0f0f0 1.34%, #b091b3 97.09%);
+    background: transparent;
+    mix-blend-mode: color-dodge;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+
+}
+
+.date {
+    margin-left: 75%;
+    margin-top: -5%;
+    width: 40%;
+}
+
+.c-date {
+    color: #fff;
+    font-size: 2.54rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+
+/* Cities================================================================================== */
+
+.cities {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container {
+    position: relative;
+    font-family: sans-serif;
+    margin-top: 4%;
+    /* margin-left: 8%; */
+    margin-bottom: 1%;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    background-color: #fab5704c;
+    position: absolute;
+}
+
+/* .container::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
+  } */
+/*   
+  .container::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    top: 8%;
+    right: 5%;
+    border: 1px solid;
+  } */
+
+.container .box {
+    width: 11.875em;
+    height: 15.875em;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    transition: all ease .3s;
+}
+
+.container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .box .title {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .1em
+}
+
+.container .box div strong {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.container .box div p {
+    margin: 0;
+    font-size: .9em;
+    font-weight: 300;
+    letter-spacing: .1em;
+}
+
+.container .box div span {
+    font-size: .7rem;
+    font-weight: 300;
+}
+
+.container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: .2rem;
+}
+
+.container .box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+
+
+
+/* Cities================================================================================== */
+
+/* weather-d=============================================================================== */
+.weather-d {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    width: 1400px;
+    height: 600px;
+}
+
+.map-d {
+    /* position: absolute; */
+    width: 464px;
+    height: 514px;
+    /* left: 8%;
+margin-top: 5%; */
+
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 39px;
+}
+
+.weather-detail {
+    /* position: absolute; */
+    width: 720px;
+    height: 350px;
+    /* left: 8%; */
+    margin-top: -15%;
+
+    /* border: 1px solid rgb(255, 255, 255); */
+    border-radius: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.up-d {
+    width: 90%;
+    height: 38%;
+    /* border: 1px solid white; */
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.down-d {
+    width: 90%;
+    height: 38%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.weather-r {
+    width: 30%;
+    height: 90%;
+    /* left: 551px; */
+    /* top: 1505px; */
+    margin-left: 5%;
+    background: rgba(246, 246, 246, 0.14);
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+
+.weather-r div strong {
+    text-align: center;
+    font-size: 1.3rem;
+    display: block;
+    margin-top: 0.8rem;
+    margin-bottom: .3rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.05rem;
+}
+
+.weather-r p {
+    margin-top: 7%;
+    margin-right: 8%;
+    float: right;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+
+
+
+/* weather-d=============================================================================== */
+
+/* previous-weather======================================================================== */
+.previous-weather {
+    /* border: 1px solid rgb(255, 255, 255); */
+    width: 1000px;
+    margin: 0 auto;
+    height: 540px;
+    background: url(.png), rgba(255, 255, 255, 0.06);
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    margin-bottom: 1%;
+}
+
+.p-w-tbl {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.p-w-tbl th {
+    padding: 1%;
+    color: #fff;
+}
+
+
+.imgdata {
+    width: 30px;
+}
+
+.p-w-tbl td {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* previous-weather======================================================================== */
+
+
+/* historical-weather====================================================================== */
+
+.historical-weather {
+    border: 1px solid;
+    margin: 0 auto;
+    width: 70%;
+    height: 400px;
+    margin-top: 4%;
+    border-radius: 40px;
+    margin-bottom: 1%;
+    mix-blend-mode: color-dodge;
+    filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(20px);
+}
+
+
+.historical-weather div h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 2%;
+}
+
+.div1 hr {
+    width: 60%;
+    margin-left: 20%;
+    color: #fff;
+    border: 1px solid #FFFFFF;
+    transform: rotate(0.11deg);
+
+}
+
+
+
+/* historical-weather====================================================================== */
+
+
+/* Pricing================================================================================= */
+.pricing {
+    width: 60%;
+    height: 500px;
+    border-radius: 25px;
+    /* border: 1px solid white; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.free {
+    width: 40%;
+    height: 450px;
+    border-radius: 25px;
+    /* border: 1px solid white; */
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 0.95;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 10%; */
+}
+
+.premium {
+    width: 40%;
+    height: 450px;
+    border-radius: 25px;
+    /* border: 1px solid white; */
+    background: rgba(255, 255, 255, 0.12);
+    mix-blend-mode: overlay;
+    opacity: 0.95;
+    box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(30px);
+}
+
+
+
+.free strong{
+    color: #fff;
+    position: absolute;
+    font-size: 1.8rem;
+    margin-left: 4%;
+    margin-top: 4%;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+.free p{
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 15%;
+    margin-left: 7%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.free p span{
+    font-size: 1.5rem;
+}
+
+.free h4{
+    color: #fff;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.free hr{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.up-p{
+    margin-top: -3%;
+    width: 100%;
+}
+/* Pricing================================================================================= */
+
+
+/* @media screen and (max-width: 1280px) {
+    .hourly-forecast {
+        margin-left: 50%;
+        margin-top: -22%;
+        width: 400px;
+    }
+
+} */
+/* @media screen and (max-width: 1300px) {
+    .hourly-forecast {
+       top: -30%;
+    }
+} */
+@media screen and (max-width: 1025px) {
+    .hourly-forecast {
+        width: 400px;
+        margin-left: 50%;
+        margin-top: -24%;
+    }
+
+    .forecast {
+        margin-top: 20%;
+    }
+
+}
+
+@media screen and (max-width:1440px) {
+    .navbar {
+        width: 100%;
+    }
+
+    .land {
+        width: 90%;
+    }
+
+}

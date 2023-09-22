@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Fog Weather</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img src="assests/WhatsApp_Image_2023-09-19_at_17.26.19-removebg-preview.png" class="logo" alt="" srcset="">
+        <h2>FOG <br>WEATHER</h2>
+        <nav>
+            <ul>
+                <div class="navdiv">
+                    <a href="">Contact Us</a>
+                    <a href="">Pricing</a>
+                    <a href="">Login</a>
+                    <a class="signup" href="">Sign Up</a>
+                </div>
+
+            </ul>
+        </nav>
+    </div>
+
+    <section class="land">
+
+        <div class="main">
+            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar" id="">
+            <i class='bx bx-search-alt-2 search-icon'></i>
+        </div>
+
+        <div class="tempDetail">
+            <div class="temp">
+                <p>23<span>℃</span></p>
+            </div>
+            <div class="weather-icon">
+                <img class="weather-i" src="assests/rain.png" alt="" srcset="">
+            </div>
+            <div class="loca">
+                <div class="location-i">
+                    <img src="assests/location-pin.png" class="location-pin" alt="" srcset="">
+                </div>
+                <div class="location">
+                    <p>Panadura</p>
+                </div>
+            </div>
+
+            <div class="time">
+                <p class="live-time" id="live-t"></p>
+                <p class="border-r"> | </p>
+                <div class="day">
+                    <p id="live-d" class="live-day"></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="forecast">
+            <h3>5-Day Forecast</h3>
+            <hr>
+            <table class="weather-tbl" border="0" id="weather-data">
+
+            </table>
+
+        </div>
+        <div class="hourly-forecast">
+
+        </div>
+
+        <div class="date">
+            <p id="current-date" class="c-date">dfdfdf</p>
+        </div>
+
+    </section>
+
+
+    <section class="cities">
+
+        <div class="container">
+            <div class="box">
+                <span class="title">WADDUWA</span>
+                <div>
+                    <strong>24℃</strong>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <span class="title">KALUTARA</span>
+                <div>
+                    <strong>24℃</strong>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <span class="title">MORATUWA</span>
+                <div>
+                    <strong>24℃</strong>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <span class="title">HORANA</span>
+                <div>
+                    <strong>24℃</strong>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="weather-d">
+        <div class="map-d">
+
+        </div>
+        <div class="weather-detail">
+            <div class="up-d">
+                <div class="weather-r">
+                    <div>
+                        <Strong>HUMIDITY</Strong>
+                    </div>
+
+                    <img src="" alt="" srcset="">
+                    <p>90%</p>
+                </div>
+                <div class="weather-r">
+                    <div>
+                        <Strong>PRECIPITATION</Strong>
+                    </div>
+
+                    <img src="" alt="" srcset="">
+                    <p>80%</p>
+                </div>
+                <div class="weather-r">
+                    <div>
+                        <Strong>WIND SPEED</Strong>
+                    </div>
+
+                    <img src="" alt="" srcset="">
+                    <p>90%</p>
+                </div>
+            </div>
+            <div class="down-d">
+                <div class="weather-r">
+                    <div>
+                        <Strong>UV</Strong>
+                    </div>
+
+                    <img src="" alt="" srcset="">
+                    <p>1</p>
+                </div>
+                <div class="weather-r">
+                    <div>
+                        <Strong>VISIBILITY</Strong>
+                    </div>
+
+                    <img src="" alt="" srcset="">
+                    <p>4 km</p>
+                </div>
+                <div class="weather-r">
+                    <div>
+                        <Strong>PRESSURE</Strong>
+                    </div>
+
+                    <img src="" alt="" srcset="">
+                    <p>25 hPa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="previous-weather">
+        <table class="p-w-tbl" id="previous-weather-table" border="0">
+            <tr>
+                <th>DATE</th>
+                <th></th>
+                <th>TEMPERATURE</th>
+                <th>HUMIDITY</th>
+                <th>PRECIPITATION</th>
+                <th>WIND SPEED</th>
+            </tr>
+            <tr>
+                <td id="temp-p">2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+            <tr>
+                <td id="temp-p">2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2023/09/22</td>
+                <td><img src="assests/rain.png" alt="" srcset="" class="imgdata"></td>
+                <td>
+                    <p>22℃</p>
+                </td>
+                <td>
+                    <p>90%</p>
+                </td>
+                <td>
+                    <p>10%</p>
+                </td>
+                <td>
+                    <p>10 km/h</p>
+                </td>
+            </tr>
+
+
+        </table>
+    </section>
+
+    <section class="historical-weather">
+        <div>
+            <div class="div1">
+                <h2>PAST WEATHER DATA</h2>
+                <hr>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="pricing">
+        <div class="free">
+            <div class="up-p">
+                <Strong>Free</Strong>
+                <p>$0<span>/month</span></p>
+                <h4>Best For Students and Educational Purposes</h4>
+                <hr>
+            </div>
+            <div class="package-d">
+                <i class='bx bx-chevrons-right'></i>
+                
+            </div>
+
+        </div>
+        <div class="premium">
+
+        </div>
+    </section>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
