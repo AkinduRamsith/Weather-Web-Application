@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&family=Poppins&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&family=Poppins&family=Press+Start+2P&family=Prompt:wght@300&display=swap');
 
 * {
     margin: 0;
@@ -483,7 +483,16 @@ margin-top: 5%; */
     font-weight: 300;
 }
 
-
+.weather-d-img{
+   
+    width: 45px;
+}
+.w-d-img-div{
+    position: absolute;
+    /* border: 1px solid white; */
+    margin-top: 1%;
+    margin-left: 1%;
+}
 
 
 
@@ -586,6 +595,7 @@ margin-top: 5%; */
     backdrop-filter: blur(30px);
     display: flex;
     flex-direction: column;
+    align-items: center;
     /* margin-left: 10%; */
 }
 
@@ -594,16 +604,19 @@ margin-top: 5%; */
     height: 450px;
     border-radius: 25px;
     /* border: 1px solid white; */
-    background: rgba(255, 255, 255, 0.12);
-    mix-blend-mode: overlay;
+    background: rgba(255, 255, 255, 0);
+    mix-blend-mode: color-dodge;
     opacity: 0.95;
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 
-.free strong{
+.free strong {
     color: #fff;
     position: absolute;
     font-size: 1.8rem;
@@ -613,7 +626,7 @@ margin-top: 5%; */
     letter-spacing: 0.3rem;
 }
 
-.free p{
+.free .f-p {
     font-size: 1.8rem;
     color: #fff;
     margin-top: 15%;
@@ -621,26 +634,444 @@ margin-top: 5%; */
     font-family: 'Poppins', sans-serif;
 }
 
-.free p span{
+.free .f-p span {
     font-size: 1.5rem;
 }
 
-.free h4{
+.free h4 {
     color: #fff;
     margin-top: 1%;
     margin-left: 5%;
 }
 
-.free hr{
+.free hr {
     width: 90%;
     margin-left: 5%;
 }
 
-.up-p{
+.up-p {
     margin-top: -3%;
     width: 100%;
 }
+
+.package-d {
+    width: 100%;
+    /* border: 1px solid white; */
+    display: block;
+    margin-top: 5%;
+    /* margin-left: 3%; */
+}
+
+.package-div {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    margin-left: 3%;
+}
+
+.package-div .pd-p {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.package-div i {
+    color: white;
+    font-size: 2.2rem;
+    /* border: 1px solid white; */
+}
+
+
+.pd-2 {
+    margin-top: 12%;
+}
+
+.pd-3 {
+    margin-top: 23%;
+}
+
+.btn-div {
+    width: 100%;
+    height: 10%;
+    margin-top: 72%;
+    /* margin-left: 37%; */
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-getstarted {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: rgba(172, 45, 174, 0.58);
+    border-radius: 50px;
+    width: 45%;
+    height: 8%;
+    font-size: 1.1rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    border: none;
+
+}
+
+.reco {
+    /* border: 1px solid white; */
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reco .reco-f {
+    color: white;
+    font-size: 0.7rem;
+    font-family: 'Prompt', sans-serif;
+}
+
+
+.premium strong {
+    color: #fff;
+    position: absolute;
+    font-size: 1.7rem;
+    margin-left: 4%;
+    margin-top: 4%;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+.premium .f-p {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 15%;
+    margin-left: 7%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.premium .f-p span {
+    font-size: 1.5rem;
+}
+
+.premium h4 {
+    color: #fff;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.premium hr {
+    width: 90%;
+    margin-left: 5%;
+    color: white;
+    border: 1px solid #FCFCFC;
+}
+
+.pd-4 {
+    margin-top: 34%;
+}
+
+.pd-5 {
+    margin-top: 44.2%;
+}
+
+.premium .btn-getstarted {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: rgba(251, 2, 255, 0.389);
+    border-radius: 50px;
+    width: 45%;
+    height: 8%;
+    font-size: 1.1rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    border: none;
+
+}
+
 /* Pricing================================================================================= */
+
+/* --------------------Contact us -------------------------------------------------------------- */
+
+.contact-us-container {
+    /* border: 1px solid white; */
+    margin: 0 auto;
+    width: 50%;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+    border-radius: 40px;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.contact-head {
+    /* border: 1px solid white; */
+    width: 100%;
+    margin-top: 1%;
+}
+
+.contact-us-head {
+    color: white;
+    margin-left: 3%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.135em;
+    font-size: 1.7rem;
+}
+
+.fn-ln {
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+
+
+}
+
+.fn-ln input {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 28%;
+    height: 17%;
+    background: rgba(57, 15, 176, 0.3);
+    mix-blend-mode: overlay;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.input-n::placeholder {
+    margin-left: -1%;
+    font-size: 0.8rem;
+}
+
+.email {
+    height: 50%;
+    /* border: 1px solid white; */
+    width: 100%;
+    margin-top: -23%;
+    margin-left: 8.5%;
+}
+
+.email .input-email {
+    background: rgba(57, 15, 176, 0.3);
+    mix-blend-mode: overlay;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    width: 80%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: #fff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+input {
+    outline: none;
+}
+
+.input-email::placeholder {
+    margin-left: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.phonenumber-div {
+    height: 50%;
+    /* border: 1px solid white; */
+    width: 100%;
+    margin-top: -23.5%;
+    margin-left: 8.5%;
+}
+
+.phonenumber-div .input-pn {
+    background: rgba(57, 15, 176, 0.3);
+    mix-blend-mode: overlay;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    width: 40%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: #fff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.input-pn::placeholder {
+    margin-left: 30%;
+
+    font-size: 0.8rem;
+}
+
+.message {
+    height: 50%;
+    /* border: 1px solid white; */
+    width: 90%;
+    margin-top: -23.5%;
+    margin-left: 8.5%;
+}
+
+.input-message {
+    background: rgba(57, 15, 176, 0.3);
+    mix-blend-mode: overlay;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    resize: none;
+    /* box-sizing: border-box; */
+    overflow: hidden;
+    text-align: center;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    height: 70%;
+    margin-left: -5%;
+    outline: none;
+    margin-top: 1%;
+}
+
+.input-message::placeholder {
+    font-size: 0.8rem;
+    margin-left: 55%;
+}
+
+
+
+.btnsubmit {
+    width: 100%;
+    /* height: 20%; */
+    /* border: 1px solid white; */
+    margin-top: -6.5%;
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: rgba(172, 45, 174, 0.58);
+    border-radius: 50px;
+    width: 20%;
+    height: 7%;
+    font-size: 1.1rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    border: none;
+    margin-left: 65%;
+}
+
+/* --------------------Contact us -------------------------------------------------------------- */
+
+/* footer----------------------------------------------------------------------------------- */
+
+footer {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.11);
+    border: 1px solid #000000;
+    box-shadow: 0px -10px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 40px 40px 0px 0px;
+    height: 360px;
+
+}
+
+.img-footer {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.footer-d {
+    /* border: 1px solid white; */
+    padding: 1%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2%;
+}
+
+.d {
+    /* border: 1px solid white; */
+    margin-bottom: 1%;
+}
+
+.p1 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-right {
+    /* border: 1px solid white; */
+    float: right;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1%;
+    margin-top: -11%;
+    margin-right: 2%;
+}
+
+.r {
+    /* border: 1px solid white; */
+    text-align: right;
+    margin-bottom: 1%;
+}
+
+.lbl-r {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.line-hr {
+    width: 94%;
+    margin-left: 3%;
+}
+
+.social-media {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.sm-i {
+    font-size: 2rem;
+    color: white;
+    margin-left: 1%;
+}
+
+/* footer----------------------------------------------------------------------------------- */
 
 
 /* @media screen and (max-width: 1280px) {

@@ -12,8 +12,7 @@ function refreshTime() {
     setInterval(refreshTime, 1000);
 
     const datetime = new Date().getDay();
-console.log(datetime); // it will represent date in the console of developers tool
-// document.getElementById("time").textContent = datetime; //it will print on html page
+console.log(datetime); 
 const daylist=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 day.textContent=daylist[datetime];
 let forecastday;
