@@ -95,7 +95,11 @@ loc();
 function initMap(lati, long) {
   var location = { lat: lati, lng: long };
   var map = new google.maps.Map(document.getElementById("google-map"), {
+<<<<<<< HEAD
     zoom: 12,
+=======
+    zoom: 4,
+>>>>>>> dca2f3032757da602b79a1408dcd710c5e6369ae
     center: location,
   });
   var marker=new google.maps.Marker({
