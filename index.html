@@ -47,7 +47,7 @@
                     <img src="assests/location-pin.png" class="location-pin" alt="" srcset="">
                 </div>
                 <div class="location">
-                    <p>Panadura</p>
+                    <p id="locationName">Panadura</p>
                 </div>
             </div>
 
@@ -118,8 +118,8 @@
     </section>
 
     <section class="weather-d">
-        <div class="map-d">
-
+        <div class="map-d" id="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.64916293071602!2d79.90734512321785!3d6.722590884040836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695524090803!5m2!1sen!2slk" width="464" height="514" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="weather-detail">
             <div class="up-d">
@@ -322,7 +322,7 @@
                 <h2>PAST WEATHER DATA</h2>
                 <hr>
             </div>
-
+            <input type="date" name="" id="">
         </div>
 
     </section>
@@ -470,6 +470,9 @@
             <i class='bx bxs-envelope sm-i'></i>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsS8pl730DObeNYFWL0yKH5UwPHzlq3_M&callback=initMap"></script> -->
+
     <script src="js/app.js"></script>
 </body>
 
