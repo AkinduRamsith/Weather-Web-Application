@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 
 <body>
@@ -31,23 +34,23 @@
     <section class="land">
 
         <div class="main">
-            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar" id="">
-            <i class='bx bx-search-alt-2 search-icon'></i>
+            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar" id="search-bar">
+            <i class='bx bx-search-alt-2 search-icon ' id="search-btn"></i>
         </div>
 
         <div class="tempDetail">
             <div class="temp">
-                <p>23<span>℃</span></p>
+                <p id="tempertaure"></p><span>℃</span>
             </div>
             <div class="weather-icon">
-                <img class="weather-i" src="assests/rain.png" alt="" srcset="">
+                <img id="current-weathe-icon" class="weather-i" src="" alt="" srcset="">
             </div>
             <div class="loca">
                 <div class="location-i">
                     <img src="assests/location-pin.png" class="location-pin" alt="" srcset="">
                 </div>
                 <div class="location">
-                    <p id="locationName">Panadura</p>
+                    <p id="locationName"></p>
                 </div>
             </div>
 
@@ -69,11 +72,39 @@
 
         </div>
         <div class="hourly-forecast">
+            <div class="now-div">
+                <div class="forecast-para">
+                    <p class="forecast-para-edit" id="forecast-para-set"></p><span class="forecast-para-edit-span">  AROUND 10:00</span>
+                </div>
+                <div class="div-now">
+                    <p class="now-p">Now</p>
+                </div>
 
+                <img src="" alt="" srcset="" class="hourImg1 " id="img">
+            </div>
+            <div class="forecast-hours">
+                <div class="hours">
+                    <p class="hour-p " id="hour6"></p>
+                    <img src="" alt="" srcset="" class="hourImg " id="img6">
+                </div>
+                <div class="hours">
+                    <p class="hour-p " id="hour12"></p>
+                    <img src="" alt="" srcset="" class="hourImg " id="img12">
+                </div>
+                <div class="hours">
+                    <p class="hour-p " id="hour17"></p>
+                    <img src="" alt="" srcset="" class="hourImg " id="img17">
+                </div>
+                <div class="hours">
+                    <p class="hour-p " id="hour22"></p>
+                    <img src="" alt="" srcset="" class="hourImg " id="img22">
+                </div>
+
+            </div>
         </div>
 
         <div class="date">
-            <p id="current-date" class="c-date">dfdfdf</p>
+            <p id="current-date" class="c-date"></p>
         </div>
 
     </section>
@@ -118,12 +149,9 @@
     </section>
 
     <section class="weather-d">
-        <div class="map-d" id="google-map">
-<<<<<<< HEAD
+        <div class="map-d" id="map">
             <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.64916293071602!2d79.90734512321785!3d6.722590884040836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695524090803!5m2!1sen!2slk" width="464" height="514" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-=======
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.64916293071602!2d79.90734512321785!3d6.722590884040836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695524090803!5m2!1sen!2slk" width="464" height="514" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
->>>>>>> dca2f3032757da602b79a1408dcd710c5e6369ae
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.64916293071602!2d79.90734512321785!3d6.722590884040836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695524090803!5m2!1sen!2slk" width="464" height="514" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
         </div>
         <div class="weather-detail">
             <div class="up-d">
@@ -131,29 +159,29 @@
                     <div>
                         <Strong>HUMIDITY</Strong>
                     </div>
-                    <div class="w-d-img-div"> 
-                        <img class="weather-d-img" src="assests/rain.png" alt="" srcset="">
+                    <div class="w-d-img-div">
+                        <img class="weather-d-img" src="assests/humidity.png" alt="" srcset="">
                     </div>
 
-                    <p>90%</p>
+                    <p id="humidity-val">90%</p>
                 </div>
                 <div class="weather-r">
                     <div>
                         <Strong>PRECIPITATION</Strong>
                     </div>
 
-                    <div class="w-d-img-div"> 
-                        <img class="weather-d-img" src="assests/rain.png" alt="" srcset="">
+                    <div class="w-d-img-div">
+                        <img class="weather-d-img" src="assests/meter.png" alt="" srcset="">
                     </div>
-                    <p>80%</p>
+                    <p id="precipitation-val">80%</p>
                 </div>
                 <div class="weather-r">
                     <div>
                         <Strong>WIND SPEED</Strong>
                     </div>
 
-                    <div class="w-d-img-div"> 
-                        <img class="weather-d-img" src="assests/rain.png" alt="" srcset="">
+                    <div class="w-d-img-div">
+                        <img class="weather-d-img" src="assests/storm.png" alt="" srcset="">
                     </div>
                     <p>90%</p>
                 </div>
@@ -164,8 +192,8 @@
                         <Strong>UV</Strong>
                     </div>
 
-                    <div class="w-d-img-div"> 
-                        <img class="weather-d-img" src="assests/rain.png" alt="" srcset="">
+                    <div class="w-d-img-div">
+                        <img class="weather-d-img" src="assests/ultraviolet.png" alt="" srcset="">
                     </div>
                     <p>1</p>
                 </div>
@@ -174,8 +202,8 @@
                         <Strong>VISIBILITY</Strong>
                     </div>
 
-                    <div class="w-d-img-div"> 
-                        <img class="weather-d-img" src="assests/rain.png" alt="" srcset="">
+                    <div class="w-d-img-div">
+                        <img class="weather-d-img" src="assests/visibility.png" alt="" srcset="">
                     </div>
                     <p>4 km</p>
                 </div>
@@ -184,8 +212,8 @@
                         <Strong>PRESSURE</Strong>
                     </div>
 
-                    <div class="w-d-img-div"> 
-                        <img class="weather-d-img" src="assests/rain.png" alt="" srcset="">
+                    <div class="w-d-img-div">
+                        <img class="weather-d-img" src="assests/meter.png" alt="" srcset="">
                     </div>
                     <p>25 hPa</p>
                 </div>
@@ -474,12 +502,12 @@
             <i class='bx bxs-envelope sm-i'></i>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsS8pl730DObeNYFWL0yKH5UwPHzlq3_M&callback=initMap"></script>
-=======
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsS8pl730DObeNYFWL0yKH5UwPHzlq3_M&callback=initMap"></script> -->
->>>>>>> dca2f3032757da602b79a1408dcd710c5e6369ae
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsS8pl730DObeNYFWL0yKH5UwPHzlq3_M&callback=initMap"></script> -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <script src="js/app.js"></script>
 </body>

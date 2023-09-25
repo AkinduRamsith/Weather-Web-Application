@@ -140,31 +140,32 @@ nav ul {
     margin-left: 37%;
 }
 
-.temp {
-    font-size: 3rem;
+.temp {  font-size: 3rem;
     color: #fff;
     font-weight: bolder;
     font-family: 'Poppins', sans-serif;
     margin-top: -4%;
+    display: flex;
 }
 
 .temp span {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .weather-i {
-    width: 60px;
+    width: 65px;
     height: auto;
     position: absolute;
     left: 42%;
-    top: 2%;
+    top: 0%;
+    margin-top: -3%;
 }
 
 .loca {
     display: flex;
     flex-direction: row;
     margin-left: -12%;
-    margin-top: -6%;
+    margin-top: -3%;
 }
 
 .location-pin {
@@ -186,9 +187,15 @@ nav ul {
 }
 
 .time {
+    /* border: 1px solid white; */
+    width: 120%;
     display: flex;
     flex-direction: row;
-    margin-top: -2%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1%;
+    margin-left: -30%;
 }
 
 .live-time {
@@ -205,7 +212,7 @@ nav ul {
     font-weight: bolder;
     margin-left: 5%;
     color: #fff;
-    margin-top: 1%;
+    margin-top: -1%;
 }
 
 /* .search-icon :hover{
@@ -213,8 +220,10 @@ nav ul {
 } */
 
 .live-day {
+    width: 100%;
     margin-left: 10%;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: 3%;
     color: #fff;
     font-family: 'Poppins', sans-serif;
 }
@@ -274,23 +283,88 @@ td {
     mix-blend-mode: color-dodge;
     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }
+.now-div{
+    width: 25%;
+    /* border: 1px solid white; */
+}
+.forecast-hours{
+    width: 70%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    
+}
+.hours{
+    width: 25%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.hourImg{
+    margin-top: -1%;
+    width: 50%;
+}
+.hourImg1{
+    margin-top: -8%;
+    margin-left: 25%;
+    width: 50%;
+}
+
+.hour-p{
+    text-align: center;
+    color: white;
+    margin-top: 20%;
+    font-size: 16px;
+    font-weight: bolder;
+}
 .date {
     margin-left: 75%;
     margin-top: -5%;
     width: 40%;
 }
+.now-p{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
 
+.div-now{
+    margin-top: 10%;
+}
 .c-date {
     color: #fff;
     font-size: 2.54rem;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
+.forecast-para{
+    margin-top: 3%;
+    margin-left: 10%;
+    width: 200%;
+    display: flex;
+    /* border: 1px solid white; */
+}
+.forecast-para-edit-span{
+    font-size: 1rem;
+    color: white;
+    margin-left: 2%;
+}
 
-
+.forecast-para-edit{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: white;
+    
+    /* margin-top: 3%; */
+}
 /* Cities================================================================================== */
 
 .cities {
