@@ -32,21 +32,21 @@ const daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
 // day.textContent = daylist[datetime];
 let forecastday;
 
-function forecast() {
-  for (let i = 0; i < 5; i++) {
-    forecastday = new Date().getDay();
-    const count = forecastday + i + 1;
+// function forecast() {
+//   for (let i = 0; i < 5; i++) {
+//     forecastday = new Date().getDay();
+//     const count = forecastday + i + 1;
 
-    if (count < 7) {
-      tblBody += `<tr><td>${daylist[count]}</td></tr>`;
-    } else {
-      const count2 = count - 7;
-      tblBody += `<tr><td>${daylist[count2]}</td></tr>`;
-    }
-  }
-  weatherTable.innerHTML = tblBody;
-}
-forecast();
+//     if (count < 7) {
+//       tblBody += `<tr><td>${daylist[count]}</td></tr>`;
+//     } else {
+//       const count2 = count - 7;
+//       tblBody += `<tr><td>${daylist[count2]}</td></tr>`;
+//     }
+//   }
+//   weatherTable.innerHTML = tblBody;
+// }
+// forecast();
 
 // Date object
 const date = new Date();
@@ -149,6 +149,13 @@ const searchBox = $("#search-bar");
 const searchBtn = $("#search-btn");
 const imgBox = $("#current-weathe-icon");
 
+const humidity = $("#humidity-val");
+const precipitation = $("#precipitation-val");
+const windspeed = $("#windspeed-val");
+const uv = $("#uv-val");
+const visibility = $("#visibility-val");
+const pressure = $("#pressure-val");
+
 let city;
 
 const apiKey = "4073aa7ff37349c3a1f110844232009";
@@ -156,7 +163,7 @@ var apiUrl = "https://api.weatherapi.com/v1/current.json?key=4073aa7ff37349c3a1f
 
 
 const forecastUrl =
-  "https://api.weatherapi.com/v1/forecast.json?key=4073aa7ff37349c3a1f110844232009&days=5&q=";
+  "https://api.weatherapi.com/v1/forecast.json?key=4073aa7ff37349c3a1f110844232009&days=6&q=";
 
 const searchUrl =
   "https://api.weatherapi.com/v1/search.json?key=4073aa7ff37349c3a1f110844232009&q=";
@@ -198,23 +205,131 @@ async function setWeather(cityName) {
     weatherType.text(weatherResponse.current.condition.text)
 
 
+
+
     // hourly forecast---------------------------------------------
     // for (let i = 0; i <= 23; i++) {
-      // console.log(forecastWeatherData.forecast.forecastday[0].hour[i]);
-      document.getElementById("hour6").innerText = forecastWeatherData.forecast.forecastday[0].hour[6].time;
-      document.getElementById("img6").src = forecastWeatherData.forecast.forecastday[0].hour[6].condition.icon;
+    // console.log(forecastWeatherData.forecast.forecastday[0].hour[i]);
+    document.getElementById("hour6").innerText = forecastWeatherData.forecast.forecastday[0].hour[6].time;
+    document.getElementById("img6").src = forecastWeatherData.forecast.forecastday[0].hour[6].condition.icon;
 
-      document.getElementById("hour12").innerText = forecastWeatherData.forecast.forecastday[0].hour[12].time;
-      document.getElementById("img12").src = forecastWeatherData.forecast.forecastday[0].hour[12].condition.icon;
+    document.getElementById("hour12").innerText = forecastWeatherData.forecast.forecastday[0].hour[12].time;
+    document.getElementById("img12").src = forecastWeatherData.forecast.forecastday[0].hour[12].condition.icon;
 
-      document.getElementById("hour17").innerText = forecastWeatherData.forecast.forecastday[0].hour[17].time;
-      document.getElementById("img17").src = forecastWeatherData.forecast.forecastday[0].hour[17].condition.icon;
+    document.getElementById("hour17").innerText = forecastWeatherData.forecast.forecastday[0].hour[17].time;
+    document.getElementById("img17").src = forecastWeatherData.forecast.forecastday[0].hour[17].condition.icon;
 
-      document.getElementById("hour22").innerText = forecastWeatherData.forecast.forecastday[0].hour[22].time;
-      document.getElementById("img22").src = forecastWeatherData.forecast.forecastday[0].hour[22].condition.icon;
+    document.getElementById("hour22").innerText = forecastWeatherData.forecast.forecastday[0].hour[22].time;
+    document.getElementById("img22").src = forecastWeatherData.forecast.forecastday[0].hour[22].condition.icon;
     // }
     document.getElementById("img").src = weatherResponse.current.condition.icon;
     document.getElementById("forecast-para-set").innerText = forecastWeatherData.forecast.forecastday[0].hour[10].condition.text;
+
+    humidity.text(weatherResponse.current.humidity + " %");
+    precipitation.text(weatherResponse.current.precip_mm + " mm");
+    windspeed.text(weatherResponse.current.wind_kph + " kph");
+    uv.text(weatherResponse.current.uv);
+    visibility.text(weatherResponse.current.vis_km + " km");
+    pressure.text(weatherResponse.current.pressure_mb + " hpa");
+
+
+    for (let i = 1; i < 6; i++) {
+
+      document.querySelector(`#date${i}`).innerText = forecastWeatherData.forecast.forecastday[i].date;
+      document.querySelector(`#img${i}`).src = forecastWeatherData.forecast.forecastday[i].day.condition.icon;
+      document.querySelector(`#temp${i}`).innerText = Math.round(forecastWeatherData.forecast.forecastday[i].day.avgtemp_c) + " ℃";
+      document.querySelector(`#hum${i}`).innerText = "H : " + forecastWeatherData.forecast.forecastday[i].day.avghumidity + "%";
+      document.querySelector(`#w-s${i}`).innerText = "W/S : " + Math.round(forecastWeatherData.forecast.forecastday[i].day.maxwind_kph) + " kph";
+    }
+    let currentDateForPrevious = forecastWeatherData.forecast.forecastday[0].date;
+    // console.log(new Date(mili).getFullYear());
+
+
+    var leapMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    var leapNDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+
+
+    // var leapNMonth=[1,2,3,4,5,6,7,8,9,10,11,12];
+    var leapDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    let now = new Date(currentDateForPrevious);
+    console.log(now);
+    let nowYear = now.getFullYear();
+    let nowMonth = now.getMonth()+1;
+    let nowDate = now.getDate();
+
+    let prevYear;
+    let prevMonth;
+    let prevDate;
+    console.log(nowDate);
+    // console.log(nowMonth);
+    if (nowYear % 4 == 0 && nowYear % 100 != 0 || nowYear % 400 == 0) {
+      let tempMonth;
+      for (let i = 0; i < leapMonth.length; i++) {
+        // console.log(nowMonth);
+        if (nowMonth === leapMonth[i]) {
+          tempMonth = leapMonth[i];
+          // console.log(nowMonth);
+          let tempDate = nowDate - 7;
+          if (tempDate > 0) {
+            prevYear = nowYear;
+            prevMonth = tempMonth;
+            prevDate = tempDate;
+          } else {
+            let minusMonth = tempMonth - 1;
+            if (minusMonth > 0) {
+              let minusDate = leapDays[i - 1] + tempDate;
+              
+              prevYear = nowYear;
+              prevMonth = minusMonth;
+              prevDate = minusDate;
+            } else {
+              prevYear=nowYear-1;
+              prevMonth=12;
+              prevDate=31+tempDate;
+            }
+          }
+        }
+      }
+
+    }else{
+      // console.log(nowMonth);
+      let tempMonth1;
+      for (let i = 0; i < leapMonth.length; i++) {
+        if (nowMonth === leapMonth[i]) {
+          tempMonth1 = leapMonth[i];
+          console.log(tempMonth1);
+          let tempDate1 = nowDate - 7;
+          console.log(tempDate1);
+
+          if (tempDate1 > 0) {
+            prevYear = nowYear;
+            prevMonth = tempMonth1;
+            prevDate = tempDate1;
+          } else {
+            let minusMonth1 = tempMonth1 - 1;
+            console.log("M :"+minusMonth1);
+            if (minusMonth1 > 0) {
+              let minusDate1 = leapNDays[i - 1] + tempDate1;
+              console.log("MD :"+minusDate1);
+              prevYear = nowYear;
+              prevMonth = minusMonth1;
+              prevDate = minusDate1;
+            } else {
+              prevYear=nowYear-1;
+              prevMonth=12;
+              prevDate=31+tempDate1;
+            }
+          }
+        }
+      }
+    }
+    
+
+    let toDate=prevYear+"-"+prevMonth+"-"+prevDate;
+    console.log(toDate);
+    // console.log(nowDate);
 
 
   } catch (error) {
