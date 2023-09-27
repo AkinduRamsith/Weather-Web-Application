@@ -1,17 +1,19 @@
-// const day = document.getElementById("live-d");
+
 const weatherTable = document.getElementById("weather-data");
 const nowDate = document.getElementById("current-date");
-const tempP = document.getElementById("temp-p");
 
 
 const loactionName = $("#locationName");
 const tempertaure = $("#tempertaure");
 const weatherType = $("#live-d");
-// const map = $("#map");
+const tempP=$("#temp-p");
 
+const calendar=document.getElementById("calendar");
+const btnSubmit=document.getElementById("his-btnSubmit");
+;
+var d=Last7Days();
 
 let tblBody = '';
-// let geoApiUrl;
 function refreshTime() {
   const timeDisplay = document.getElementById("live-t");
   const options = {
@@ -27,28 +29,11 @@ function refreshTime() {
 setInterval(refreshTime, 1000);
 
 const datetime = new Date().getDay();
-console.log(datetime);
 const daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-// day.textContent = daylist[datetime];
+
 let forecastday;
 
-// function forecast() {
-//   for (let i = 0; i < 5; i++) {
-//     forecastday = new Date().getDay();
-//     const count = forecastday + i + 1;
 
-//     if (count < 7) {
-//       tblBody += `<tr><td>${daylist[count]}</td></tr>`;
-//     } else {
-//       const count2 = count - 7;
-//       tblBody += `<tr><td>${daylist[count2]}</td></tr>`;
-//     }
-//   }
-//   weatherTable.innerHTML = tblBody;
-// }
-// forecast();
-
-// Date object
 const date = new Date();
 
 let currentDay = String(date.getDate()).padStart(2, '0');
@@ -61,13 +46,10 @@ let currentYear = date.getFullYear();
 
 let currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
 nowDate.textContent = currentDate;
-tempP.textContent = currentDate;
-console.log("The current date is " + currentDate);
 
-// let zoomed;
+
 function loc() {
   const successs = (position1) => {
-    console.log(position1);
     const latitude = position1.coords.latitude;
     const longitude = position1.coords.longitude;
     const accuracy = position1.coords.accuracy;
@@ -83,40 +65,27 @@ function loc() {
     const marker = L.marker([latitude, longitude]).addTo(map);
     const circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
-    // if(!zoomed){
-    //   zoomed=map.fitBounds(circle.getBounds());
-    // }
+   
     map.fitBounds(circle.getBounds());
     marker.setLatLng([latitude, longitude]).update();
     map.setView([latitude, longitude]);
 
 
 
-    // if(marker){
-    //   map.removeLayer(marker);
-    //   map.removeLayer(circle);
-    // }
+
     const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
 
 
-    // fetch(geoApiUrl)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data);
-    //   })
+    
     $.ajax({
       method: "GET",
       url: geoApiUrl,
       success: (resp) => {
-        console.log(resp);
         loactionName.text(resp.locality)
       }
     })
     getLocation(latitude, longitude);
   }
-
-
-  // console.log(loactionName.text());
 
 
   const error = () => {
@@ -127,21 +96,7 @@ function loc() {
 
 loc();
 
-// function initMap(lati, long) {
-//   var location = { lat: lati, lng: long };
-//   var map = new google.maps.Map(document.getElementById("google-map"), {
-// <<<<<<< HEAD
-//     zoom: 12,
-// =======
-//     zoom: 4,
-// >>>>>>> dca2f3032757da602b79a1408dcd710c5e6369ae
-//     center: location,
-//   });
-//   var marker=new google.maps.Marker({
-//     position: location,
-//     map:map
-//   })
-// }
+
 
 
 // --------------------------Weather API-----------------------------------------------------------//
@@ -169,20 +124,21 @@ const searchUrl =
   "https://api.weatherapi.com/v1/search.json?key=4073aa7ff37349c3a1f110844232009&q=";
 
 const historyUrl =
-  "https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f1108442320095&q=";
+  "https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=2023-5-6&q=";
+
+
+
 
 
 async function getLocation(lat, lng) {
   const alt = lat;
   const long = lng;
-  console.log("Show", alt, long);
 
   const search = await fetch(searchUrl + alt.toString() + "," + long.toString());
   const cityData = await search.json();
 
   city = cityData[0].name;
 
-  console.log(city);
   setWeather(city)
 }
 
@@ -192,12 +148,10 @@ async function setWeather(cityName) {
       method: "GET",
       url: apiUrl + cityName,
     });
-    console.log(weatherResponse);
 
 
     const weatherResponseForecast = await fetch(forecastUrl + cityName);
     const forecastWeatherData = await weatherResponseForecast.json();
-    console.log(forecastWeatherData);
 
     loactionName.text(weatherResponse.location.name)
     tempertaure.text(Math.round(weatherResponse.current.temp_c))
@@ -208,8 +162,7 @@ async function setWeather(cityName) {
 
 
     // hourly forecast---------------------------------------------
-    // for (let i = 0; i <= 23; i++) {
-    // console.log(forecastWeatherData.forecast.forecastday[0].hour[i]);
+  
     document.getElementById("hour6").innerText = forecastWeatherData.forecast.forecastday[0].hour[6].time;
     document.getElementById("img6").src = forecastWeatherData.forecast.forecastday[0].hour[6].condition.icon;
 
@@ -241,95 +194,117 @@ async function setWeather(cityName) {
       document.querySelector(`#hum${i}`).innerText = "H : " + forecastWeatherData.forecast.forecastday[i].day.avghumidity + "%";
       document.querySelector(`#w-s${i}`).innerText = "W/S : " + Math.round(forecastWeatherData.forecast.forecastday[i].day.maxwind_kph) + " kph";
     }
-    let currentDateForPrevious = forecastWeatherData.forecast.forecastday[0].date;
-    // console.log(new Date(mili).getFullYear());
-
-
-    var leapMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-    var leapNDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-
-
-    // var leapNMonth=[1,2,3,4,5,6,7,8,9,10,11,12];
-    var leapDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-    let now = new Date(currentDateForPrevious);
-    console.log(now);
-    let nowYear = now.getFullYear();
-    let nowMonth = now.getMonth()+1;
-    let nowDate = now.getDate();
-
-    let prevYear;
-    let prevMonth;
-    let prevDate;
-    console.log(nowDate);
-    // console.log(nowMonth);
-    if (nowYear % 4 == 0 && nowYear % 100 != 0 || nowYear % 400 == 0) {
-      let tempMonth;
-      for (let i = 0; i < leapMonth.length; i++) {
-        // console.log(nowMonth);
-        if (nowMonth === leapMonth[i]) {
-          tempMonth = leapMonth[i];
-          // console.log(nowMonth);
-          let tempDate = nowDate - 7;
-          if (tempDate > 0) {
-            prevYear = nowYear;
-            prevMonth = tempMonth;
-            prevDate = tempDate;
-          } else {
-            let minusMonth = tempMonth - 1;
-            if (minusMonth > 0) {
-              let minusDate = leapDays[i - 1] + tempDate;
-              
-              prevYear = nowYear;
-              prevMonth = minusMonth;
-              prevDate = minusDate;
-            } else {
-              prevYear=nowYear-1;
-              prevMonth=12;
-              prevDate=31+tempDate;
-            }
-          }
-        }
-      }
-
-    }else{
-      // console.log(nowMonth);
-      let tempMonth1;
-      for (let i = 0; i < leapMonth.length; i++) {
-        if (nowMonth === leapMonth[i]) {
-          tempMonth1 = leapMonth[i];
-          console.log(tempMonth1);
-          let tempDate1 = nowDate - 7;
-          console.log(tempDate1);
-
-          if (tempDate1 > 0) {
-            prevYear = nowYear;
-            prevMonth = tempMonth1;
-            prevDate = tempDate1;
-          } else {
-            let minusMonth1 = tempMonth1 - 1;
-            console.log("M :"+minusMonth1);
-            if (minusMonth1 > 0) {
-              let minusDate1 = leapNDays[i - 1] + tempDate1;
-              console.log("MD :"+minusDate1);
-              prevYear = nowYear;
-              prevMonth = minusMonth1;
-              prevDate = minusDate1;
-            } else {
-              prevYear=nowYear-1;
-              prevMonth=12;
-              prevDate=31+tempDate1;
-            }
-          }
-        }
-      }
-    }
+ 
     
+   
+      const historyUrl0 =
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result1}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl0 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p0").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon0").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val0").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum0").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc0").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws0").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
 
-    let toDate=prevYear+"-"+prevMonth+"-"+prevDate;
-    console.log(toDate);
-    // console.log(nowDate);
+
+        }
+      })
+      const historyUrl1 =
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result2}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl1 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p1").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon1").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val1").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum1").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc1").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws1").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
+        }
+      })
+      const historyUrl2=
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result3}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl2 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p2").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon2").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val2").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum2").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc2").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws2").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
+        }
+      })
+      const historyUrl3 =
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result4}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl3 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p3").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon3").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val3").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum3").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc3").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws3").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
+        }
+      })
+      const historyUrl4 =
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result5}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl4 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p4").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon4").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val4").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum4").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc4").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws4").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
+        }
+      })
+      const historyUrl5 =
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result6}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl5 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p5").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon5").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val5").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum5").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc5").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws5").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
+        }
+      })
+      const historyUrl6 =
+      `https://api.weatherapi.com/v1/history.json?key=4073aa7ff37349c3a1f110844232009&dt=${d.result7}&q=`;
+    
+      $.ajax({
+        method: "GET",
+        url: historyUrl6 + cityName,
+        success: (resp) => {
+          document.querySelector("#temp-p6").innerText=resp.forecast.forecastday[0].date;
+          document.querySelector("#temp-icon6").src=resp.forecast.forecastday[0].day.condition.icon;
+          document.querySelector("#temp-val6").innerText=Math.round(resp.forecast.forecastday[0].day.avgtemp_c)+"℃";
+          document.querySelector("#temp-hum6").innerText=resp.forecast.forecastday[0].day.avghumidity+"%";
+          document.querySelector("#temp-perc6").innerText=Math.round(resp.forecast.forecastday[0].day.totalprecip_mm)+" mm";
+          document.querySelector("#temp-ws6").innerText=Math.round(resp.forecast.forecastday[0].day.maxwind_kph)+" kph";
+        }
+      })
+      
 
 
   } catch (error) {
@@ -339,3 +314,53 @@ async function setWeather(cityName) {
 
 
 }
+function Last7Days () {
+
+  var today = new Date();
+  var oneDayAgo = new Date(today);
+  var twoDaysAgo = new Date(today);
+  var threeDaysAgo = new Date(today);
+  var fourDaysAgo = new Date(today);
+  var fiveDaysAgo = new Date(today);
+  var sixDaysAgo = new Date(today);
+  var sevenDaysAgo = new Date(today);
+
+  oneDayAgo.setDate(today.getDate() - 1);
+  twoDaysAgo.setDate(today.getDate() - 2);
+  threeDaysAgo.setDate(today.getDate() - 3);
+  fourDaysAgo.setDate(today.getDate() - 4);
+  fiveDaysAgo.setDate(today.getDate() - 5);
+  sixDaysAgo.setDate(today.getDate() - 6);
+  sevenDaysAgo.setDate(today.getDate() - 7);
+
+  var result0 = formatDate(today);
+  var result1 = formatDate(oneDayAgo);
+  var result2 = formatDate(twoDaysAgo);
+  var result3 = formatDate(threeDaysAgo);
+  var result4 = formatDate(fourDaysAgo);
+  var result5 = formatDate(fiveDaysAgo);
+  var result6 = formatDate(sixDaysAgo);
+  var result7 = formatDate(sevenDaysAgo);
+
+  var result = {result1,result2,result3,result4,result5,result6,result7};
+
+  return(result);
+}
+
+function formatDate(date){
+  var dd = date.getDate();
+  var mm = date.getMonth()+1;
+  var yyyy = date.getFullYear();
+  if(dd<10) {dd='0'+dd}
+  if(mm<10) {mm='0'+mm}
+  date = yyyy+'-'+mm+'-'+dd;
+  return date
+ }
+
+// ------------------------History--------------------------------------------------
+btnSubmit.addEventListener("click",(e)=>{
+  const pickDate=calendar.value;
+  console.log(pickDate);
+})
+
+
