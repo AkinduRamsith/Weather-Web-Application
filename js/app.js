@@ -10,9 +10,13 @@ const tempP=$("#temp-p");
 
 const calendar=document.getElementById("calendar");
 const btnSubmit=document.getElementById("his-btnSubmit");
-;
-var d=Last7Days();
+const btnSearch=document.getElementById("search-btn");
+const searchBox1=document.getElementById("search-bar");
+ 
 
+var d=Last7Days();
+var map = L.map('map').setView([0, 0], 13);
+var marker;
 let tblBody = '';
 function refreshTime() {
   const timeDisplay = document.getElementById("live-t");
@@ -55,18 +59,18 @@ function loc() {
     const accuracy = position1.coords.accuracy;
 
 
-    var map = L.map('map').setView([latitude, longitude], 13);
+    // var map = L.map('map').setView([latitude, longitude], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    const marker = L.marker([latitude, longitude]).addTo(map);
-    const circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
+    marker = L.marker([latitude, longitude]).addTo(map);
+    // const circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
    
-    map.fitBounds(circle.getBounds());
+    // map.fitBounds(circle.getBounds());
     marker.setLatLng([latitude, longitude]).update();
     map.setView([latitude, longitude]);
 
@@ -100,8 +104,8 @@ loc();
 
 
 // --------------------------Weather API-----------------------------------------------------------//
-const searchBox = $("#search-bar");
-const searchBtn = $("#search-btn");
+// const searchBox = $("#search-bar");
+// const searchBtn = $("#search-btn");
 const imgBox = $("#current-weathe-icon");
 
 const humidity = $("#humidity-val");
@@ -158,7 +162,13 @@ async function setWeather(cityName) {
     imgBox.attr("src", weatherResponse.current.condition.icon);
     weatherType.text(weatherResponse.current.condition.text)
 
+    const latitude=weatherResponse.location.lat;
+    const longitude=weatherResponse.location.lon;
+    console.log(latitude,longitude);
 
+    // marker.setLatLng([latitude, longitude]).update();
+    // map.setView([latitude, longitude], 13);
+    setLocation(latitude,longitude);
 
 
     // hourly forecast---------------------------------------------
@@ -363,4 +373,29 @@ btnSubmit.addEventListener("click",(e)=>{
   console.log(pickDate);
 })
 
+btnSearch.addEventListener("click", ()=>{
+  city=searchBox1.value;
+  console.log(city);
+  setWeather(city);
+})
 
+
+// ------------------------------Set Location Map-------------------------
+ async function setLocation(lati,long){
+  marker.setLatLng([lati, long]).update();
+  map.setView([lati, long]);
+
+
+
+
+  const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lati}&longitude=${long}&localityLanguage=en`;
+ }
+
+//  -----------------dark theme------------------------------------------------------------
+let themeChange=document.getElementById("theme-change");
+let lightNavbar=document.getElementById("light-navbar");
+
+themeChange.onclick = function () {
+  document.documentElement.classList.toggle("darktheme");
+  lightNavbar.classList.toggle("nav-darktheme");
+}

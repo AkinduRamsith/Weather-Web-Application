@@ -6,8 +6,34 @@
     box-sizing: border-box;
 }
 
+:root{
+    --bg-color:#090429f6;
+    --font-color:#fff;
+    --signup-btn-col:#000;
+
+    /* ------land------------ */
+
+    --forecast-bg-1:#f0f0f0;
+    --forecast-bg-:#b091b3;
+    --forecast-box-shadow:rgba(0, 0, 0, 0.25);
+    --lan-bgimg:url("../assests/Cloud\ Your\ Story\ \(1980\ ×\ 1220px\).png");
+
+    
+}
+.darktheme{
+    --bg-color:#FEFAFA;
+}
+.nav-darktheme{
+    --font-color:#000;
+    --signup-btn-col:#fff
+}
+
+.land-darktheme{
+    --font-color:#000;
+    --lan-bgimg:url("../assests/Blue\ White\ Simple\ Cloud\ Photo\ Relax\ Phone\ Wallpaper\ \(1980\ ×\ 1220px\).png");
+}
 html {
-    background-color: #090429f6;
+    background-color: var(--bg-color)
 }
 
 .logo {
@@ -22,29 +48,39 @@ html {
     width: 1280px;
     display: flex;
     flex-direction: row;
+    position: relative;
     /* justify-content: space-between; */
 }
 
 .navbar h2 {
     font-size: 1.4rem;
     margin-top: 1.6%;
-    color: #fff;
+    color: var(--font-color);
     line-height: 30px;
     letter-spacing: 0.115em;
     font-family: 'Press Start 2P', cursive;
     cursor: pointer;
 }
-
+.dark-light{
+    width: 45px;
+    height: 48px;
+    margin-left: 70%;
+    margin-top: 1.5%;
+    filter: contrast(150%);
+    cursor: pointer;
+    
+}
 a {
     text-decoration: none;
     font-weight: bolder;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.2rem;
 }
 
 nav {
     margin-top: 0.6%;
-
+display: flex;
+flex-direction: row;
 }
 
 nav ul {
@@ -67,20 +103,20 @@ nav ul {
 }
 
 .signup {
-    border: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid rgb(255, 255, 255); */
     border-radius: 50px;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--font-color);
+    color: var(--signup-btn-col);
 }
 
 .land {
-    background: rgba(0, 0, 0, 0.883);
+    /* background: rgba(0, 0, 0, 0.883); */
     border-radius: 40px;
     width: 1250px;
     height: 550px;
     border-radius: 25px;
-    background: url("../assests/Cloud\ Your\ Story\ \(1980\ ×\ 1220px\).png");
-    background-color: rgba(0, 0, 0, 0.721);
+    background: var(--lan-bgimg);
+    /* background-color: rgba(0, 0, 0, 0.721); */
     border-radius: 20px;
     /* transform: matrix(-1, 0, 0, 1, 0, 0); */
     background-size: cover;
@@ -94,7 +130,7 @@ nav ul {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    border: 1px solid white;
+    border: 1px solid var(--font-color);
     border-radius: 30px;
     padding: 10px;
     width: 1000px;
@@ -109,7 +145,7 @@ nav ul {
     left: 10px;
     outline: none;
     text-align: center;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.5rem;
     font-weight: bolder;
     background: none;
@@ -123,7 +159,7 @@ nav ul {
     text-align: center;
     font-size: 1.2rem;
     margin-top: 5%;
-    color: #fff;
+    color: var(--font-color);
     letter-spacing: 0.3rem;
 }
 
@@ -131,7 +167,7 @@ nav ul {
     font-size: 1.5rem;
     margin-left: 94%;
     cursor: pointer;
-    color: #fff;
+    color: var(--font-color);
 }
 
 .tempDetail {
@@ -142,7 +178,7 @@ nav ul {
 
 .temp {
     font-size: 3rem;
-    color: #fff;
+    color: var(--font-color);
     font-weight: bolder;
     font-family: 'Poppins', sans-serif;
     margin-top: -4%;
@@ -180,7 +216,7 @@ nav ul {
 
 .location {
     font-size: 3rem;
-    color: #fff;
+    color: var(--font-color);
     font-weight: bolder;
     margin-left: 12%;
     margin-top: 1%;
@@ -200,7 +236,7 @@ nav ul {
 }
 
 .live-time {
-    color: #fff;
+    color: var(--font-color);
     font-size: 2rem;
     margin-left: -10%;
     font-family: 'Poppins', sans-serif;
@@ -212,7 +248,7 @@ nav ul {
     font-size: 2rem;
     font-weight: bolder;
     margin-left: 5%;
-    color: #fff;
+    color: var(--font-color);
     margin-top: -1%;
 }
 
@@ -225,7 +261,7 @@ nav ul {
     margin-left: 10%;
     font-size: 1.5rem;
     margin-top: 3%;
-    color: #fff;
+    color: var(--font-color);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -236,10 +272,10 @@ nav ul {
     height: 270px;
     border-radius: 25px;
     /* border: 1px solid black; */
-    background: linear-gradient(143.86deg, #f0f0f0 1.34%, #b091b3 97.09%);
+    background: linear-gradient(143.86deg, var(--forecast-bg-1)  1.34%, var(--forecast-bg-) 97.09%);
     background: transparent;
     mix-blend-mode: color-dodge;
-    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 4px var(--forecast-box-shadow);
     backdrop-filter: blur(10px);
 }
 
@@ -247,7 +283,7 @@ nav ul {
     margin-left: 10%;
     text-align: center;
     font-size: 1.6rem;
-    color: #fff;
+    color: var(--font-color);
 
 
 }
@@ -272,7 +308,7 @@ nav ul {
 }
 
 td {
-    color: #fff;
+    color: var(--font-color);
     padding: 1.5%;
     /* width: 80px; */
 }
@@ -286,10 +322,10 @@ td {
     width: 650px;
     height: 150px;
     border-radius: 25px;
-    background: linear-gradient(143.86deg, #f0f0f0 1.34%, #b091b3 97.09%);
+    background: linear-gradient(143.86deg, var(--forecast-bg-1)  1.34%, var(--forecast-bg-) 97.09%);
     background: transparent;
     mix-blend-mode: color-dodge;
-    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 4px var(--forecast-box-shadow);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
@@ -334,7 +370,7 @@ td {
 
 .hour-p {
     text-align: center;
-    color: white;
+    color: var(--font-color);
     margin-top: 20%;
     font-size: 16px;
     font-weight: bolder;
@@ -347,7 +383,7 @@ td {
 }
 
 .now-p {
-    color: #fff;
+    color: var(--font-color);
     font-size: 2rem;
     text-align: center;
 }
@@ -357,7 +393,7 @@ td {
 }
 
 .c-date {
-    color: #fff;
+    color: var(--font-color);
     font-size: 2.54rem;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -373,14 +409,14 @@ td {
 
 .forecast-para-edit-span {
     font-size: 1rem;
-    color: white;
+    color: var(--font-color);
     margin-left: 2%;
 }
 
 .forecast-para-edit {
     text-transform: uppercase;
     font-size: 1rem;
-    color: white;
+    color: var(--font-color);
 
     /* margin-top: 3%; */
 }
@@ -759,6 +795,7 @@ margin-top: 5%; */
 .wea-icon{
     width: 70px;
     filter: contrast(250%);
+    margin-left: -21%;
 }
 
 .wea-des{
@@ -791,12 +828,14 @@ border-bottom: 0.02px solid rgba(255, 252, 252, 0.031);
     font-size: 1rem;
     font-family: 'Martian Mono', monospace;
     font-weight: bold;
+    
 }
 .sunset-div{
     color: white;
     font-size: 1rem;
     font-family: 'Martian Mono', monospace;
     font-weight: bold;
+    margin-left: 30%;
 }
 
 /* .lblsunrise{
