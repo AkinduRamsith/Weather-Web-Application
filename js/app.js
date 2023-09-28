@@ -393,9 +393,61 @@ btnSearch.addEventListener("click", ()=>{
 
 //  -----------------dark theme------------------------------------------------------------
 let themeChange=document.getElementById("theme-change");
-let lightNavbar=document.getElementById("light-navbar");
+ let lightNavbar=document.getElementsByClassName("light-navbar");
+// let ligntLand=document.getElementsByClassName("light-land");
 
-themeChange.onclick = function () {
-  document.documentElement.classList.toggle("darktheme");
-  lightNavbar.classList.toggle("nav-darktheme");
+let selector=0;
+
+lightModeChanger();
+
+function lightModeChanger(){
+  themeChange.addEventListener("click",()=>{
+    if(selector%2==0){
+      themeChange.src="assests/moon.png"; 
+      selector++;
+      themeChanger();
+    }else{
+      themeChange.src="assests/sun.png";
+      selector++;
+      themeChanger();
+    }
+  });
 }
+
+
+
+function themeChanger(){
+  if(selector%2==0){
+    document.body.style.backgroundColor = "#090429f6";
+    for (let i = 0; i < lightNavbar.length; i++) {
+      lightNavbar[i].style.color = "#fff";
+    }
+    // currentLocation.style.backgroundColor = "#34495e";
+    // divAirCondition.style.backgroundColor = "rgba(30, 20, 20, 0.4)";
+    
+
+    // div3dayForecast.style.backgroundColor = "rgba(30, 20, 20, 0.4)";
+    // divPreviousWeather.style.backgroundColor = "rgba(30, 20, 20, 0.4)";
+    // divPastdataHead.style.backgroundColor = "rgba(38, 10, 10, 0.499)";
+  }else{
+    document.body.style.backgroundColor = "#fff";
+    for (let i = 0; i < lightNavbar.length; i++) {
+      lightNavbar[i].style.color = "#000";
+    }
+    // document.body.style.backgroundImage = "url('/assets/darkmode.jpg')";
+    // currentLocation.style.backgroundColor = "rgba(2, 6, 37, 0.452)";
+    // divAirCondition.style.backgroundColor = "rgba(217, 217, 217, 0.18)";
+    // div3dayForecast.style.backgroundColor = "rgba(217, 217, 217, 0.18)";
+    // divPreviousWeather.style.backgroundColor = "rgba(17, 16, 16, 0.249)";
+    // divPastdataHead.style.backgroundColor = "rgba(217, 217, 217, 0.3)";
+  }
+}
+
+// themeChange.onclick = function () {
+//   document.documentElement.classList.toggle("darktheme");
+//   lightNavbar.classList.toggle("nav-darktheme");
+//   for (let i = 0; i < ligntLand.length; i++) {
+//     ligntLand[i].classList.toggle("land-darktheme");
+//   }
+// }
+

@@ -31,6 +31,7 @@
 .land-darktheme{
     --font-color:#000;
     --lan-bgimg:url("../assests/Blue\ White\ Simple\ Cloud\ Photo\ Relax\ Phone\ Wallpaper\ \(1980\ ×\ 1220px\).png");
+    
 }
 html {
     background-color: var(--bg-color)
