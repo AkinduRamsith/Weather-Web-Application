@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Fog Weather</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -21,11 +21,11 @@
         <h2 class="light-navbar">FOG <br>WEATHER</h2>
         <nav>
             <ul>
-                <div class="navdiv light-navbar" >
-                    <a  href="">Contact Us</a>
-                    <a  href="">Pricing</a>
-                    <a href="">Login</a>
-                    <a class="signup" href="">Sign Up</a>
+                <div class="navdiv " >
+                    <a class="light-navbar1"  href="">Contact Us</a>
+                    <a class="light-navbar1"   href="">Pricing</a>
+                    <a class="light-navbar1"  href="">Login</a> 
+                    <a class="signup light-navbar2" href="">Sign Up</a>
                    
                 </div>
 
@@ -38,105 +38,105 @@
     <section class="land" >
 
         <div class="main" >
-            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar" id="search-bar">
-            <i class='bx bx-search-alt-2 search-icon ' id="search-btn"></i>
+            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar light-navbar1" id="search-bar">
+            <i class='bx bx-search-alt-2 search-icon light-navbar' id="search-btn"></i>
         </div>
 
         <div class="tempDetail">
             <div class="temp">
-                <p id="tempertaure"></p><span>℃</span>
+                <p class="light-navbar" id="tempertaure"></p><span class="light-navbar">℃</span>
             </div>
             <div class="weather-icon">
                 <img id="current-weathe-icon" class="weather-i" src="" alt="" srcset="">
             </div>
             <div class="loca">
                 <div class="location-i">
-                    <img src="assests/location-pin.png" class="location-pin" alt="" srcset="">
+                    <img src="assests/location-pin.png" class="location-pin light-navbar" alt="" srcset="">
                 </div>
                 <div class="location">
-                    <p id="locationName"></p>
+                    <p class="light-navbar" id="locationName"></p>
                 </div>
             </div>
 
             <div class="time">
-                <p class="live-time" id="live-t"></p>
-                <p class="border-r"> | </p>
+                <p class="live-time  light-navbar" id="live-t"></p>
+                <p class="border-r light-navbar"> | </p>
                 <div class="day">
-                    <p id="live-d" class="live-day"></p>
+                    <p id="live-d" class="live-day light-navbar"></p>
                 </div>
             </div>
 
         </div>
-        <div class="forecast">
-            <h3>5-Day Forecast</h3>
+        <div class="forecast light-forecast">
+            <h3 class="light-forecast-h3" id="">5-Day Forecast</h3>
             <hr>
             <table class="weather-tbl" border="0" id="weather-data">
                 <tr>
-                    <td id="date1"></td>
+                    <td class="light-navbar" id="date1"></td>
                     <td><img id="img1" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td id="temp1">22℃</td>
-                    <td id="hum1">H :80%</td>
-                    <td id="w-s1">W/S :12 kph</td>
+                    <td class="light-navbar" id="temp1">22℃</td>
+                    <td class="light-navbar"  id="hum1">H :80%</td>
+                    <td class="light-navbar" id="w-s1">W/S :12 kph</td>
                 </tr>
                 <tr>
-                    <td id="date2"></td>
+                    <td class="light-navbar"  id="date2"></td>
                     <td><img id="img2" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td id="temp2">22℃</td>
-                    <td id="hum2">H :80%</td>
-                    <td id="w-s2">W/S :12 kph</td>
+                    <td class="light-navbar" id="temp2">22℃</td>
+                    <td class="light-navbar" id="hum2">H :80%</td>
+                    <td class="light-navbar" id="w-s2">W/S :12 kph</td>
                 </tr>
                 <tr>
-                    <td id="date3"></td>
+                    <td class="light-navbar" id="date3"></td>
                     <td><img id="img3" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td id="temp3">22℃</td>
-                    <td id="hum3">H :80%</td>
-                    <td id="w-s3">W/S :12 kph</td>
+                    <td class="light-navbar" id="temp3">22℃</td>
+                    <td class="light-navbar" id="hum3">H :80%</td>
+                    <td class="light-navbar" id="w-s3">W/S :12 kph</td>
                 </tr>
                 <tr>
-                    <td id="date4"></td>
+                    <td class="light-navbar" id="date4"></td>
                     <td><img id="img4" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td id="temp4">22℃</td>
-                    <td id="hum4">H :80%</td>
-                    <td id="w-s4">W/S :12 kph</td>
+                    <td class="light-navbar" id="temp4">22℃</td>
+                    <td class="light-navbar" id="hum4">H :80%</td>
+                    <td class="light-navbar" id="w-s4">W/S :12 kph</td>
                 </tr>
                 <tr>
-                    <td id="date5"></td>
+                    <td class="light-navbar" id="date5"></td>
                     <td><img id="img5" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td id="temp5">22℃</td>
-                    <td id="hum5">H :80%</td>
-                    <td id="w-s5">W/S :12 kph</td>
+                    <td class="light-navbar" id="temp5">22℃</td>
+                    <td class="light-navbar" id="hum5">H :80%</td>
+                    <td class="light-navbar" id="w-s5">W/S :12 kph</td>
                 </tr>
 
             </table>
 
         </div>
-        <div class="hourly-forecast">
+        <div class="hourly-forecast light-navbar3">
             <div class="now-div">
                 <div class="forecast-para">
-                    <p class="forecast-para-edit" id="forecast-para-set"></p><span class="forecast-para-edit-span">
+                    <p class="forecast-para-edit light-hf" id="forecast-para-set"></p><span class="forecast-para-edit-span light-hf">
                         AROUND 10:00</span>
                 </div>
                 <div class="div-now">
-                    <p class="now-p">Now</p>
+                    <p class="now-p light-hf light-hf">Now</p>
                 </div>
 
                 <img src="" alt="" srcset="" class="hourImg1 " id="img">
             </div>
             <div class="forecast-hours">
                 <div class="hours">
-                    <p class="hour-p " id="hour6"></p>
+                    <p class="hour-p light-hf" id="hour6"></p>
                     <img src="" alt="" srcset="" class="hourImg " id="img6">
                 </div>
                 <div class="hours">
-                    <p class="hour-p " id="hour12"></p>
+                    <p class="hour-p light-hf" id="hour12"></p>
                     <img src="" alt="" srcset="" class="hourImg " id="img12">
                 </div>
                 <div class="hours">
-                    <p class="hour-p " id="hour17"></p>
+                    <p class="hour-p light-hf" id="hour17"></p>
                     <img src="" alt="" srcset="" class="hourImg " id="img17">
                 </div>
                 <div class="hours">
-                    <p class="hour-p " id="hour22"></p>
+                    <p class="hour-p light-hf" id="hour22"></p>
                     <img src="" alt="" srcset="" class="hourImg " id="img22">
                 </div>
 
@@ -144,7 +144,7 @@
         </div>
 
         <div class="date">
-            <p id="current-date" class="c-date"></p>
+            <p id="current-date" class="c-date light-navbar1"></p>
         </div>
 
     </section>
@@ -195,192 +195,192 @@
         </div>
         <div class="weather-detail">
             <div class="up-d">
-                <div class="weather-r">
+                <div class="weather-r light-weather-r">
                     <div>
-                        <Strong>HUMIDITY</Strong>
+                        <Strong class="light-navbar1">HUMIDITY</Strong>
                     </div>
                     <div class="w-d-img-div">
                         <img class="weather-d-img" src="assests/humidity.png" alt="" srcset="">
                     </div>
 
-                    <p id="humidity-val">90</p>
+                    <p id="humidity-val" class="light-navbar1">90</p>
                 </div>
                 <div class="weather-r">
                     <div>
-                        <Strong>PRECIPITATION</Strong>
+                        <Strong class="light-navbar1">PRECIPITATION</Strong>
                     </div>
 
                     <div class="w-d-img-div">
                         <img class="weather-d-img" src="assests/meter.png" alt="" srcset="">
                     </div>
-                    <p id="precipitation-val">80</p>
+                    <p id="precipitation-val" class="light-navbar1">80</p>
                 </div>
                 <div class="weather-r">
                     <div>
-                        <Strong>WIND SPEED</Strong>
+                        <Strong class="light-navbar1">WIND SPEED</Strong>
                     </div>
 
                     <div class="w-d-img-div">
                         <img class="weather-d-img" src="assests/storm.png" alt="" srcset="">
                     </div>
-                    <p id="windspeed-val">90</p>
+                    <p id="windspeed-val" class="light-navbar1">90</p>
                 </div>
             </div>
             <div class="down-d">
                 <div class="weather-r">
                     <div>
-                        <Strong>UV</Strong>
+                        <Strong class="light-navbar1">UV</Strong>
                     </div>
 
                     <div class="w-d-img-div">
                         <img class="weather-d-img" src="assests/ultraviolet.png" alt="" srcset="">
                     </div>
-                    <p id="uv-val">1</p>
+                    <p id="uv-val" class="light-navbar1">1</p>
                 </div>
                 <div class="weather-r">
                     <div>
-                        <Strong>VISIBILITY</Strong>
+                        <Strong class="light-navbar1">VISIBILITY</Strong>
                     </div>
 
                     <div class="w-d-img-div">
                         <img class="weather-d-img" src="assests/visibility.png" alt="" srcset="">
                     </div>
-                    <p id="visibility-val">4</p>
+                    <p id="visibility-val" class="light-navbar1">4</p>
                 </div>
                 <div class="weather-r">
                     <div>
-                        <Strong>PRESSURE</Strong>
+                        <Strong class="light-navbar1">PRESSURE</Strong>
                     </div>
 
                     <div class="w-d-img-div">
                         <img class="weather-d-img" src="assests/meter.png" alt="" srcset="">
                     </div>
-                    <p id="pressure-val">25</p>
+                    <p id="pressure-val" class="light-navbar1">25</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="previous-weather">
+    <section class="previous-weather light-previous-weather">
         <table class="p-w-tbl" id="previous-weather-table" border="0">
             <tr>
-                <th>DATE</th>
-                <th></th>
-                <th>TEMPERATURE</th>
-                <th>HUMIDITY</th>
-                <th>PRECIPITATION</th>
-                <th>WIND SPEED</th>
+                <th class="light-navbar1">DATE</th>
+                <th class="light-navbar1"></th>
+                <th class="light-navbar1">TEMPERATURE</th>
+                <th class="light-navbar1">HUMIDITY</th>
+                <th class="light-navbar1">PRECIPITATION</th>
+                <th class="light-navbar1">WIND SPEED</th>
             </tr>
             <tr>
-                <td id="temp-p0">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p0">2023/09/22</td>
                 <td><img id="temp-icon0" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val0">22℃</p>
+                    <p class="light-navbar1" id="temp-val0">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum0">90%</p>
+                    <p class="light-navbar1" id="temp-hum0">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc0">10%</p>
+                    <p class="light-navbar1" id="temp-perc0">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws0">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws0">10 km/h</p>
                 </td>
             </tr>
             <tr>
-                <td id="temp-p1">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p1">2023/09/22</td>
                 <td><img id="temp-icon1" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val1">22℃</p>
+                    <p class="light-navbar1" id="temp-val1">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum1">90%</p>
+                    <p class="light-navbar1" id="temp-hum1">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc1">10%</p>
+                    <p class="light-navbar1" id="temp-perc1">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws1">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws1">10 km/h</p>
                 </td>
             </tr>
             <tr>
-                <td id="temp-p2">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p2">2023/09/22</td>
                 <td><img id="temp-icon2" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val2">22℃</p>
+                    <p class="light-navbar1" id="temp-val2">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum2">90%</p>
+                    <p class="light-navbar1" id="temp-hum2">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc2">10%</p>
+                    <p class="light-navbar1" id="temp-perc2">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws2">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws2">10 km/h</p>
                 </td>
             </tr>
             <tr>
-                <td id="temp-p3">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p3">2023/09/22</td>
                 <td><img id="temp-icon3" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val3">22℃</p>
+                    <p class="light-navbar1" id="temp-val3">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum3">90%</p>
+                    <p class="light-navbar1" id="temp-hum3">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc3">10%</p>
+                    <p class="light-navbar1" id="temp-perc3">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws3">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws3">10 km/h</p>
                 </td>
             </tr>
             <tr>
-                <td id="temp-p4">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p4">2023/09/22</td>
                 <td><img id="temp-icon4" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val4">22℃</p>
+                    <p class="light-navbar1" id="temp-val4">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum4">90%</p>
+                    <p class="light-navbar1" id="temp-hum4">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc4">10%</p>
+                    <p class="light-navbar1" id="temp-perc4">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws4">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws4">10 km/h</p>
                 </td>
             </tr>
             <tr>
-                <td id="temp-p5">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p5">2023/09/22</td>
                 <td><img id="temp-icon5" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val5">22℃</p>
+                    <p class="light-navbar1" id="temp-val5">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum5">90%</p>
+                    <p class="light-navbar1" id="temp-hum5">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc5">10%</p>
+                    <p class="light-navbar1" id="temp-perc5">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws5">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws5">10 km/h</p>
                 </td>
             </tr>
             <tr>
-                <td id="temp-p6">2023/09/22</td>
+                <td class="light-navbar1" id="temp-p6">2023/09/22</td>
                 <td><img id="temp-icon6" src="" alt="" srcset="" class="imgdata"></td>
                 <td>
-                    <p id="temp-val6">22℃</p>
+                    <p class="light-navbar1" id="temp-val6">22℃</p>
                 </td>
                 <td>
-                    <p id="temp-hum6">90%</p>
+                    <p class="light-navbar1" id="temp-hum6">90%</p>
                 </td>
                 <td>
-                    <p id="temp-perc6">10%</p>
+                    <p class="light-navbar1" id="temp-perc6">10%</p>
                 </td>
                 <td>
-                    <p id="temp-ws6">10 km/h</p>
+                    <p class="light-navbar1" id="temp-ws6">10 km/h</p>
                 </td>
             </tr>
 
@@ -388,65 +388,65 @@
         </table>
     </section>
 
-    <section class="historical-weather">
+    <section class="historical-weather light-previous-weather">
         <div>
             <div class="div1">
-                <h2>PAST WEATHER DATA</h2>
+                <h2 class="light-navbar1">PAST WEATHER DATA</h2>
                 <!-- <hr> -->
             </div>
             <div class="date-picker">
-                <input class="his-date" type="date" name="" id="calendar">
-                <button class="his-btn-submit" id="his-btnSubmit">Submit</button>
-                <label for="" id="selectdate-lbl" class="lbl-selctdate">2023-09-27</label>
+                <input class="his-date light-date-picker" type="date" name="" id="calendar">
+                <button class="his-btn-submit light-navbar2 light-btn-submit" id="his-btnSubmit">Submit</button>
+                <label for="" id="selectdate-lbl" class="lbl-selctdate light-navbar">2023-09-27</label>
             </div>
-            <hr class="history-hr">
+            <hr class="history-hr light-navbar2">
 
 
             <div>
-                <div class="weathericon-weather-des">
-                    <label for="" id="weatherdes" class="wea-des">Partly Cloud</label>
+                <div class="weathericon-weather-des light-weather-des">
+                    <label for="" id="weatherdes" class="wea-des light-navbar">Partly Cloud</label>
                     <img src="assests/humidity.png" alt="" id="weathericon" class="wea-icon">
 
                 </div>
                 <div class="weather-his-d">
-                    <div class="weather-his weather-his1">
+                    <div class="weather-his weather-his1 light-weather-his">
                         <div class="sunrise-div">
-                            <label for="" class="lblsunrise">Sunrise </label>
-                            <label for="" class="txtsunrise">6:30am</label>
+                            <label for="" class="lblsunrise light-navbar">Sunrise </label>
+                            <label for="" class="txtsunrise light-navbar">6:30am</label>
                         </div>
                         <div class="sunset-div">
-                            <label for="" class="lblsunset">Sunset </label>
-                            <label for="" class="txtsunset">6:30am</label>
+                            <label for="" class="lblsunset light-navbar">Sunset </label>
+                            <label for="" class="txtsunset light-navbar">6:30am</label>
                         </div>
                     </div>
-                    <div class="weather-his weather-his2">
+                    <div class="weather-his weather-his2 light-weather-his">
                         <div class="sunrise-div">
-                            <label for="" class="lblsunrise">Sunrise </label>
-                            <label for="" class="txtsunrise">6:30am</label>
+                            <label for="" class="lblsunrise light-navbar">Sunrise </label>
+                            <label for="" class="txtsunrise light-navbar">6:30am</label>
                         </div>
                         <div class="sunset-div">
-                            <label for="" class="lblsunset">Sunset </label>
-                            <label for="" class="txtsunset">6:30am</label>
+                            <label for="" class="lblsunset light-navbar">Sunset</label>
+                            <label for="" class="txtsunset light-navbar">6:30am</label>
                         </div>
                     </div>
-                    <div class="weather-his weather-his3">
+                    <div class="weather-his weather-his3 light-weather-his">
                         <div class="sunrise-div">
-                            <label for="" class="lblsunrise">Sunrise </label>
-                            <label for="" class="txtsunrise">6:30am</label>
+                            <label for="" class="lblsunrise light-navbar">Sunrise </label>
+                            <label for="" class="txtsunrise light-navbar">6:30am</label>
                         </div>
                         <div class="sunset-div">
-                            <label for="" class="lblsunset">Sunset </label>
-                            <label for="" class="txtsunset">6:30am</label>
+                            <label for="" class="lblsunset light-navbar">Sunset </label>
+                            <label for="" class="txtsunset light-navbar">6:30am</label>
                         </div>
                     </div>
-                    <div class="weather-his weather-his4">
+                    <div class="weather-his weather-his4 light-weather-his">
                         <div class="sunrise-div">
-                            <label for="" class="lblsunrise">Sunrise </label>
-                            <label for="" class="txtsunrise">6:30am</label>
+                            <label for="" class="lblsunrise light-navbar">Sunrise </label>
+                            <label for="" class="txtsunrise light-navbar">6:30am</label>
                         </div>
                         <div class="sunset-div">
-                            <label for="" class="lblsunset">Sunset </label>
-                            <label for="" class="txtsunset">6:30am</label>
+                            <label for="" class="lblsunset light-navbar">Sunset </label>
+                            <label for="" class="txtsunset light-navbar">6:30am</label>
                         </div>
                     </div>
                 </div>
@@ -459,39 +459,39 @@
     </section>
 
     <section class="pricing">
-        <div class="free">
+        <div class="free light-free">
             <div class="up-p">
-                <Strong>Free</Strong>
-                <p class="f-p">$0<span>/month</span></p>
-                <h4>Best For Students and Educational Purposes</h4>
+                <Strong class="light-navbar">Free</Strong>
+                <p  class="f-p light-navbar">$0<span>/month</span></p>
+                <h4 class="light-navbar">Best For Students and Educational Purposes</h4>
                 <hr>
             </div>
             <div class="package-d">
                 <div class="package-div pd-1">
-                    <i class='bx bx-chevrons-right'></i>
-                    <p class="pd-p">Access to Basic Features</p>
+                    <i class='bx bx-chevrons-right light-navbar'></i>
+                    <p class="pd-p light-navbar">Access to Basic Features</p>
                 </div>
                 <div class="package-div pd-2">
-                    <i class='bx bx-chevrons-right'></i>
-                    <p class="pd-p">Add 5 Favourite Places</p>
+                    <i class='bx bx-chevrons-right light-navbar'></i>
+                    <p class="pd-p light-navbar">Add 5 Favourite Places</p>
                 </div>
                 <div class="package-div pd-3">
-                    <i class='bx bx-chevrons-right'></i>
-                    <p class="pd-p">Limited Weather Calls</p>
+                    <i class='bx bx-chevrons-right light-navbar'></i>
+                    <p class="pd-p light-navbar">Limited Weather Calls</p>
                 </div>
 
                 <div class="btn-div">
                     <button class="btn-getstarted">Get Started</button>
                 </div>
                 <div class="reco">
-                    <p class="reco-f">Recommended For All Users</p>
+                    <p class="reco-f light-navbar">Recommended For All Users</p>
                 </div>
             </div>
 
         </div>
         <div class="premium">
-            <div class="up-p">
-                <Strong>Premium</Strong>
+            <div class="up-p light-premium">
+                <Strong class="light-premium-strong">Premium</Strong>
                 <p class="f-p">$35<span>/month</span></p>
                 <h4>Best For Professional Purposes</h4>
                 <hr>
@@ -532,12 +532,12 @@
 
     <section class="contact-us-container">
         <div class="contact-head">
-            <h2 class="contact-us-head">CONTACT US</h2>
+            <h2 class="contact-us-head light-navbar">CONTACT US</h2>
         </div>
 
         <div class="fn-ln">
-            <input type="text" name="" id="" class="input-n input-fn" placeholder="First Name">
-            <input type="text" name="" id="" class="input-n input-ln" placeholder="Last Name">
+            <input type="text" name="" id="" class="input-n input-fn light-navbar light-placeholder" placeholder="First Name">
+            <input type="text" name="" id="" class="input-n input-ln light-navbar" placeholder="Last Name">
 
         </div>
         <div class="email">
@@ -565,40 +565,40 @@
 
         <div class="footer-d">
             <div class="d">
-                <p class="p1">Our Technologies</p>
+                <p class="p1 light-navbar">Our Technologies</p>
             </div>
             <div class="d">
-                <p class="p1">Pricing</p>
+                <p class="p1 light-navbar">Pricing</p>
             </div>
             <div class="d">
-                <p class="p1">Contact Us</p>
+                <p class="p1 light-navbar">Contact Us</p>
             </div>
             <div class="d">
-                <p class="p1">Press</p>
+                <p class="p1 light-navbar">Press</p>
             </div>
         </div>
 
-        <div class="footer-right">
+        <div class="footer-right light-navbar">
             <div class="r">
-                <label for="" class="lbl-r"><a href="">akiyaramsith2002@gmail.com</a></label>
+                <label for="" class="lbl-r light-navbar1"><a href="">akiyaramsith2002@gmail.com</a></label>
             </div>
             <div class="r">
-                <label for="" class="lbl-r"><a href="">+94 762071532</a></label>
+                <label for="" class="lbl-r light-navbar1"><a href="">+94 762071532</a></label>
             </div>
             <div class="r">
-                <label for="" class="lbl-r"><a href="">+94 714909717</a></label>
+                <label for="" class="lbl-r light-navbar1"><a href="">+94 714909717</a></label>
             </div>
         </div>
 
         <div class="line">
-            <hr class="line-hr">
+            <hr class="line-hr light-navbar">
         </div>
 
         <div class="social-media">
-            <i class='bx bxl-meta sm-i'></i>
-            <i class='bx bxl-instagram sm-i'></i>
-            <i class='bx bxl-twitter sm-i'></i>
-            <i class='bx bxs-envelope sm-i'></i>
+            <i class='bx bxl-meta sm-i light-navbar'></i>
+            <i class='bx bxl-instagram sm-i light-navbar'></i>
+            <i class='bx bxl-twitter sm-i light-navbar'></i>
+            <i class='bx bxs-envelope sm-i light-navbar'></i>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.js"

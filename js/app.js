@@ -394,53 +394,198 @@ btnSearch.addEventListener("click", ()=>{
 //  -----------------dark theme------------------------------------------------------------
 let themeChange=document.getElementById("theme-change");
  let lightNavbar=document.getElementsByClassName("light-navbar");
+ let lightNavbar1=document.getElementsByClassName("light-navbar1");
+ let lightNavbar2=document.getElementsByClassName("light-navbar2");
+ let lightNavbar3=document.getElementsByClassName("light-navbar3");
+ let lightForecast=document.getElementsByClassName("light-forecast");
+ let lightForecastH3=document.getElementsByClassName("light-forecast-h3");
+ let lightHf=document.getElementsByClassName("light-hf");
+ let lightWeatherR=document.getElementsByClassName("light-weather-r");
+ let lightPreviousWeather=document.getElementsByClassName("light-previous-weather");
+ let lightDatePicker=document.getElementsByClassName("light-date-picker");
+ let lightBtnSubmit=document.getElementsByClassName("light-btn-submit");
+ let lightWeatherDes=document.getElementsByClassName("light-weather-des");
+ let lightWeatherHis=document.getElementsByClassName("light-weather-his");
+ let lightFree=document.getElementsByClassName("light-free");
+ let lightPremiumStrong=document.getElementsByClassName("light-premium-strong");
+ let lightPlaceholder=document.getElementsByClassName("light-placeholder");
+ const land = document.getElementsByClassName("land")[0];
 // let ligntLand=document.getElementsByClassName("light-land");
 
 let selector=0;
 
-lightModeChanger();
+themeChange.addEventListener("click", () => {
 
-function lightModeChanger(){
-  themeChange.addEventListener("click",()=>{
-    if(selector%2==0){
-      themeChange.src="assests/moon.png"; 
-      selector++;
-      themeChanger();
-    }else{
-      themeChange.src="assests/sun.png";
-      selector++;
-      themeChanger();
+  themeChanger();
+});
+
+function themeChanger() {
+  if (selector % 2 === 0) {
+    themeChange.src="assests/moon.png"; 
+    document.body.style.backgroundColor = "rgb(225, 226, 219)";
+    for (let i = 0; i < lightNavbar.length; i++) {
+      lightNavbar[i].style.color = "#000";
     }
-  });
-}
+    for (let i = 0; i < lightNavbar1.length; i++) {
+      lightNavbar1[i].style.color = "#000000";
+    }
+    for (let i = 0; i < lightNavbar3.length; i++) {
+      lightNavbar3[i].style.color = "#000";
+      lightNavbar3[i].style['mix-blend-mode'] = "normal";
+      lightNavbar3[i].style.background = " rgba(255, 255, 255,)";
+    }
+    for (let i = 0; i < lightForecast.length; i++) {
+      lightForecast[i].style.background = "linear-gradient(143.86deg, #F2E5E7 1.34%, #B091B3 97.09%)";
+      lightForecast[i].style['mix-blend-mode'] = "overlay";
+      lightForecast[i].style.color = "#070101 !important";
+      lightForecast[i].style.background= "transparent";
+      // lightForecast[i].style['mix-blend-mode'] = "color-dodge";
+    }
+    for (let i = 0; i < lightForecastH3.length; i++) {
+      lightForecastH3[i].style.cssText = "color: #130202 !important;";
 
+    }
+    for (let i = 0; i < lightNavbar2.length; i++) {
+      lightNavbar2[i].style.color = "#fff";
+      lightNavbar2[i].style.backgroundColor = "#000";
+    }
+    for (let i = 0; i < lightHf.length; i++) {
+      lightHf[i].style.color="#00000087"
+      lightHf[i].style['mix-blend-mode'] = "overlay";
+    }
+    for (let i = 0; i < lightWeatherR.length; i++) {
+      lightWeatherR[i].style.color="#00000087"
+      lightWeatherR[i].style.background=" rgba(246, 246, 246, 0.14)"
+    }
+    for (let i = 0; i < lightPreviousWeather.length; i++) {
+      lightPreviousWeather[i].style.color="#00000087"
+      lightPreviousWeather[i].style.background=" rgba(246, 246, 246)"
+      lightPreviousWeather[i].style.border=" none"
+    }
+    for (let i = 0; i < lightDatePicker.length; i++) {
+      lightDatePicker[i].style.color="#fff"
+      lightDatePicker[i].style.background=" rgba(0, 0, 0, 0.54)"
+      lightDatePicker[i].style.border=" none"
+    }
+    for (let i = 0; i < lightBtnSubmit.length; i++) {
+      lightBtnSubmit[i].style.color="#fff"
+      lightBtnSubmit[i].style.background=" rgba(0, 0, 0,)"
+      lightBtnSubmit[i].style.border=" none"
+    
+     
+    }
+    for (let i = 0; i < lightWeatherDes.length; i++) {
+      lightWeatherDes[i].style['border-bottom'] = "0.02px solid rgba(0, 0, 0, 0.130)";
+      lightWeatherDes[i].style.width= "180%";
+      lightWeatherDes[i].style['align-items'] =" center";
+      lightWeatherDes[i].style['margin-left']="-40%";
+    }
+    for (let i = 0; i < lightWeatherHis.length; i++) {
+      lightWeatherHis[i].style['border-bottom'] = "0.02px solid rgba(0, 0, 0, 0.130)";
+      // lightWeatherHis[i].style.width= "180%";
+      // lightWeatherHis[i].style['margin-left']="-40%";
+      lightWeatherHis[i].style['align-items'] =" center"
+      lightWeatherHis[i].style.color = "#000";
+    }
+    
+    
+    if (land) {
+      land.style.backgroundImage = "url('assests/Blue White Simple Cloud Photo Relax Phone Wallpaper (1980 × 1220px).png')";
+    }
 
-
-function themeChanger(){
-  if(selector%2==0){
+    for (let i = 0; i < lightFree.length; i++) {
+      lightFree[i].style.color="#fff"
+      lightFree[i].style.background="rgba(0, 0, 0, 0.12)"
+      lightFree[i].style.opacity="0.95"
+      lightFree[i].style.border=" none"
+    }
+    for (let i = 0; i < lightPremiumStrong.length; i++) {
+      lightPremiumStrong[i].style.color="#Green";
+      lightPremiumStrong[i].style['mix-blend-mode'] = "overlay";
+      lightPremiumStrong[i].style.opacity="100"
+      lightPremiumStrong[i].style.border=" none"
+    }
+    
+  
+   
+    selector++;
+  } else {
+    themeChange.src="assests/sun.png";
+   
     document.body.style.backgroundColor = "#090429f6";
     for (let i = 0; i < lightNavbar.length; i++) {
       lightNavbar[i].style.color = "#fff";
     }
-    // currentLocation.style.backgroundColor = "#34495e";
-    // divAirCondition.style.backgroundColor = "rgba(30, 20, 20, 0.4)";
-    
-
-    // div3dayForecast.style.backgroundColor = "rgba(30, 20, 20, 0.4)";
-    // divPreviousWeather.style.backgroundColor = "rgba(30, 20, 20, 0.4)";
-    // divPastdataHead.style.backgroundColor = "rgba(38, 10, 10, 0.499)";
-  }else{
-    document.body.style.backgroundColor = "#fff";
-    for (let i = 0; i < lightNavbar.length; i++) {
-      lightNavbar[i].style.color = "#000";
+    for (let i = 0; i < lightNavbar1.length; i++) {
+      lightNavbar1[i].style.color = "#fff";
     }
-    // document.body.style.backgroundImage = "url('/assets/darkmode.jpg')";
-    // currentLocation.style.backgroundColor = "rgba(2, 6, 37, 0.452)";
-    // divAirCondition.style.backgroundColor = "rgba(217, 217, 217, 0.18)";
-    // div3dayForecast.style.backgroundColor = "rgba(217, 217, 217, 0.18)";
-    // divPreviousWeather.style.backgroundColor = "rgba(17, 16, 16, 0.249)";
-    // divPastdataHead.style.backgroundColor = "rgba(217, 217, 217, 0.3)";
+    for (let i = 0; i < lightNavbar2.length; i++) {
+      lightNavbar2[i].style.color = "#000";
+      lightNavbar2[i].style.backgroundColor = "#fff";
+    }
+    if (land) {
+      land.style.backgroundImage = "url('assests/Cloud Your Story (1980 × 1220px).png')";
+    }
+    for (let i = 0; i < lightForecast.length; i++) {
+      lightForecast[i].style.background = "llinear-gradient(143.86deg, #f0f0f0  1.34%, #b091b3 97.09%)";
+      lightForecast[i].style['mix-blend-mode'] = "color-dodge";
+      lightForecast[i].style.color = "#fff";
+      lightForecast[i].style.background= "transparent";
+    }
+    for (let i = 0; i < lightForecastH3.length; i++) {
+      lightForecastH3[i].style.cssText = "color: #fff !important;";
+
+    }
+    for (let i = 0; i < lightHf.length; i++) {
+      lightHf[i].style.color="#fff"
+    }
+    for (let i = 0; i < lightPreviousWeather.length; i++) {
+      lightPreviousWeather[i].style.color="#fff"
+      lightPreviousWeather[i].style.background=" rgba(255, 255, 255, 0.06)"
+      lightPreviousWeather[i].style.border=" none"
+    }
+    for (let i = 0; i < lightDatePicker.length; i++) {
+      lightDatePicker[i].style.color="#000"
+      lightDatePicker[i].style.background="#fff"
+      lightDatePicker[i].style.border=" none"
+    }
+    for (let i = 0; i < lightBtnSubmit.length; i++) {
+      lightBtnSubmit[i].style.color="#000"
+      lightBtnSubmit[i].style.background=" rgba(f, f, f,)"
+      lightBtnSubmit[i].style.border=" none"
+    
+     
+    }
+    for (let i = 0; i < lightWeatherDes.length; i++) {
+      lightWeatherDes[i].style['border-bottom'] = "0.02px solid rgba(255, 252, 252, 0.100)";
+      lightWeatherDes[i].style.width= "180%";
+      lightWeatherDes[i].style['align-items'] =" center";
+      lightWeatherDes[i].style['margin-left']="-40%";
+    }
+
+    for (let i = 0; i < lightWeatherHis.length; i++) {
+      lightWeatherHis[i].style['border-bottom'] = "0.02px solid rgba(255, 252, 252, 0.100)";
+      // lightWeatherHis[i].style.width= "180%";
+      lightWeatherHis[i].style['align-items'] =" center"
+      // lightWeatherHis[i].style['margin-left']="-40%";
+      lightWeatherHis[i].style.color = "#fff";
+    }
+
+    for (let i = 0; i < lightFree.length; i++) {
+      lightFree[i].style.color="#fff"
+      lightFree[i].style.background="rgba(255, 255, 255, 0.12)"
+      lightFree[i].style.opacity="0.95"
+      lightFree[i].style.border=" none"
+    }
+    for (let i = 0; i < lightPremiumStrong.length; i++) {
+      lightPremiumStrong[i].style.color="#fff";
+      lightPremiumStrong[i].style['mix-blend-mode'] = "overlay";
+      lightPremiumStrong[i].style.opacity="100"
+      lightPremiumStrong[i].style.border=" none"
+    }
+    selector++;
   }
+  
 }
 
 // themeChange.onclick = function () {
