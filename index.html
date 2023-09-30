@@ -16,29 +16,34 @@
 
 <body>
 
-    <div class="navbar" >
+    <div class="navbar">
+        <label for="" id="icon-nav">
+            <i class="fas fa-bars"></i>
+        </label>
         <img src="assests/WhatsApp_Image_2023-09-19_at_17.26.19-removebg-preview.png" class="logo" alt="" srcset="">
         <h2 class="light-navbar">FOG <br>WEATHER</h2>
+        
         <nav>
             <ul>
-                <div class="navdiv " >
-                    <a class="light-navbar1"  href="">Contact Us</a>
-                    <a class="light-navbar1"   href="">Pricing</a>
-                    <a class="light-navbar1"  href="">Login</a> 
+                <div class="navdiv ">
+                    <a class="light-navbar1" href="">Contact Us</a>
+                    <a class="light-navbar1" href="">Pricing</a>
+                    <a class="light-navbar1" href="">Login</a>
                     <a class="signup light-navbar2" href="">Sign Up</a>
-                   
+
                 </div>
 
             </ul>
-            
+
         </nav>
         <img src="assests/sun.png" alt="" class="dark-light" id="theme-change">
     </div>
 
-    <section class="land" >
+    <section class="land">
 
-        <div class="main" >
-            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar light-navbar1" id="search-bar">
+        <div class="main">
+            <input type="text" name="" placeholder="Search By City or Postal Code" class="searchbar light-navbar1"
+                id="search-bar">
             <i class='bx bx-search-alt-2 search-icon light-navbar' id="search-btn"></i>
         </div>
 
@@ -68,18 +73,18 @@
 
         </div>
         <div class="forecast light-forecast">
-            <h3 class="light-forecast-h3" id="">5-Day Forecast</h3>
+            <h3 class="light-forecast-h3" id="">3-Day Forecast</h3>
             <hr>
             <table class="weather-tbl" border="0" id="weather-data">
                 <tr>
                     <td class="light-navbar" id="date1"></td>
                     <td><img id="img1" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
                     <td class="light-navbar" id="temp1">22℃</td>
-                    <td class="light-navbar"  id="hum1">H :80%</td>
+                    <td class="light-navbar" id="hum1">H :80%</td>
                     <td class="light-navbar" id="w-s1">W/S :12 kph</td>
                 </tr>
                 <tr>
-                    <td class="light-navbar"  id="date2"></td>
+                    <td class="light-navbar" id="date2"></td>
                     <td><img id="img2" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
                     <td class="light-navbar" id="temp2">22℃</td>
                     <td class="light-navbar" id="hum2">H :80%</td>
@@ -92,20 +97,7 @@
                     <td class="light-navbar" id="hum3">H :80%</td>
                     <td class="light-navbar" id="w-s3">W/S :12 kph</td>
                 </tr>
-                <tr>
-                    <td class="light-navbar" id="date4"></td>
-                    <td><img id="img4" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td class="light-navbar" id="temp4">22℃</td>
-                    <td class="light-navbar" id="hum4">H :80%</td>
-                    <td class="light-navbar" id="w-s4">W/S :12 kph</td>
-                </tr>
-                <tr>
-                    <td class="light-navbar" id="date5"></td>
-                    <td><img id="img5" class="day-forecast-img" src="assests/humidity.png" alt=""></td>
-                    <td class="light-navbar" id="temp5">22℃</td>
-                    <td class="light-navbar" id="hum5">H :80%</td>
-                    <td class="light-navbar" id="w-s5">W/S :12 kph</td>
-                </tr>
+
 
             </table>
 
@@ -113,7 +105,8 @@
         <div class="hourly-forecast light-navbar3">
             <div class="now-div">
                 <div class="forecast-para">
-                    <p class="forecast-para-edit light-hf" id="forecast-para-set"></p><span class="forecast-para-edit-span light-hf">
+                    <p class="forecast-para-edit light-hf" id="forecast-para-set"></p><span
+                        class="forecast-para-edit-span light-hf">
                         AROUND 10:00</span>
                 </div>
                 <div class="div-now">
@@ -211,7 +204,7 @@
                     </div>
 
                     <div class="w-d-img-div">
-                        <img class="weather-d-img" src="assests/meter.png" alt="" srcset="">
+                        <img class="weather-d-img" src="assests/rain (1).png" alt="" srcset="">
                     </div>
                     <p id="precipitation-val" class="light-navbar1">80</p>
                 </div>
@@ -264,12 +257,12 @@
     <section class="previous-weather light-previous-weather">
         <table class="p-w-tbl" id="previous-weather-table" border="0">
             <tr>
-                <th class="light-navbar1">DATE</th>
-                <th class="light-navbar1"></th>
-                <th class="light-navbar1">TEMPERATURE</th>
-                <th class="light-navbar1">HUMIDITY</th>
-                <th class="light-navbar1">PRECIPITATION</th>
-                <th class="light-navbar1">WIND SPEED</th>
+                <th class="light-navbar1" id="d-date">DATE</th>
+                <th class="light-navbar1" ></th>
+                <th class="light-navbar1" id="d-temp">TEMPERATURE</th>
+                <th class="light-navbar1" id="d-hum">HUMIDITY</th>
+                <th class="light-navbar1" id="d-prec">PRECIPITATION</th>
+                <th class="light-navbar1" id="d-ws">WIND SPEED</th>
             </tr>
             <tr>
                 <td class="light-navbar1" id="temp-p0">2023/09/22</td>
@@ -462,7 +455,7 @@
         <div class="free light-free">
             <div class="up-p">
                 <Strong class="light-navbar">Free</Strong>
-                <p  class="f-p light-navbar">$0<span>/month</span></p>
+                <p class="f-p light-navbar">$0<span>/month</span></p>
                 <h4 class="light-navbar">Best For Students and Educational Purposes</h4>
                 <hr>
             </div>
@@ -536,7 +529,8 @@
         </div>
 
         <div class="fn-ln">
-            <input type="text" name="" id="" class="input-n input-fn light-navbar light-placeholder" placeholder="First Name">
+            <input type="text" name="" id="" class="input-n input-fn light-navbar light-placeholder"
+                placeholder="First Name">
             <input type="text" name="" id="" class="input-n input-ln light-navbar" placeholder="Last Name">
 
         </div>
@@ -580,13 +574,13 @@
 
         <div class="footer-right light-navbar">
             <div class="r">
-                <label for="" class="lbl-r light-navbar1"><a href="">akiyaramsith2002@gmail.com</a></label>
+                <label for="" class="lbl-r"><a href="" class="light-navbar">akiyaramsith2002@gmail.com</a></label>
             </div>
             <div class="r">
-                <label for="" class="lbl-r light-navbar1"><a href="">+94 762071532</a></label>
+                <label for="" class="lbl-r"><a href="" class="light-navbar">+94 762071532</a></label>
             </div>
             <div class="r">
-                <label for="" class="lbl-r light-navbar1"><a href="">+94 714909717</a></label>
+                <label for="" class="lbl-r"><a href="" class="light-navbar">+94 714909717</a></label>
             </div>
         </div>
 
@@ -607,7 +601,7 @@
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsS8pl730DObeNYFWL0yKH5UwPHzlq3_M&callback=initMap"></script> -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
 

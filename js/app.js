@@ -118,11 +118,11 @@ const pressure = $("#pressure-val");
 let city;
 
 const apiKey = "4073aa7ff37349c3a1f110844232009";
-var apiUrl = "https://api.weatherapi.com/v1/current.json?key=4073aa7ff37349c3a1f110844232009&q=";
+var apiUrl = "https://api.weatherapi.com/v1/current.json?key=4073aa7ff37349c3a1f110844232009&alerts=yes&q=";
 
 
 const forecastUrl =
-  "https://api.weatherapi.com/v1/forecast.json?key=4073aa7ff37349c3a1f110844232009&days=6&q=";
+  "https://api.weatherapi.com/v1/forecast.json?key=4073aa7ff37349c3a1f110844232009&days=4&alerts=yes&q=";
 
 const searchUrl =
   "https://api.weatherapi.com/v1/search.json?key=4073aa7ff37349c3a1f110844232009&q=";
@@ -156,7 +156,7 @@ async function setWeather(cityName) {
 
     const weatherResponseForecast = await fetch(forecastUrl + cityName);
     const forecastWeatherData = await weatherResponseForecast.json();
-
+console.log(forecastWeatherData);
     loactionName.text(weatherResponse.location.name)
     tempertaure.text(Math.round(weatherResponse.current.temp_c))
     imgBox.attr("src", weatherResponse.current.condition.icon);
@@ -196,7 +196,7 @@ async function setWeather(cityName) {
     pressure.text(weatherResponse.current.pressure_mb + " hpa");
 
 
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 4; i++) {
 
       document.querySelector(`#date${i}`).innerText = forecastWeatherData.forecast.forecastday[i].date;
       document.querySelector(`#img${i}`).src = forecastWeatherData.forecast.forecastday[i].day.condition.icon;
@@ -436,9 +436,9 @@ function themeChanger() {
     }
     for (let i = 0; i < lightForecast.length; i++) {
       lightForecast[i].style.background = "linear-gradient(143.86deg, #F2E5E7 1.34%, #B091B3 97.09%)";
-      lightForecast[i].style['mix-blend-mode'] = "overlay";
+      lightForecast[i].style['mix-blend-mode'] = "darken";
       lightForecast[i].style.color = "#070101 !important";
-      lightForecast[i].style.background= "transparent";
+      // lightForecast[i].style.background= "transparent";
       // lightForecast[i].style['mix-blend-mode'] = "color-dodge";
     }
     for (let i = 0; i < lightForecastH3.length; i++) {
@@ -596,3 +596,32 @@ function themeChanger() {
 //   }
 // }
 
+
+// fro media queries---------------------------
+const dDate=document.getElementById("d-date");
+const dTemp=document.getElementById("d-temp");
+const dHum=document.getElementById("d-hum");
+const dPrec=document.getElementById("d-prec");
+const dWs=document.getElementById("d-ws");
+
+
+function updateTextBasedOnScreenWidth() {
+  if (window.innerWidth < 500) {
+    dDate.textContent = 'Date';
+    dTemp.textContent = 'T';
+    dHum.textContent = 'H';
+    dPrec.textContent = 'P';
+    dWs.textContent = 'W-S';
+  } else {
+    dDate.textContent = 'Date';
+    dTemp.textContent = 'TEMPERATURE';
+    dHum.textContent = 'HUMIDITY';
+    dPrec.textContent = 'PRECIPITATION';
+    dWs.textContent = 'WIND SPEED';
+  }
+}
+
+updateTextBasedOnScreenWidth();
+
+// Update text when the window is resized
+window.addEventListener('resize', updateTextBasedOnScreenWidth);
