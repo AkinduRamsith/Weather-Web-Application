@@ -625,3 +625,19 @@ updateTextBasedOnScreenWidth();
 
 // Update text when the window is resized
 window.addEventListener('resize', updateTextBasedOnScreenWidth);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const iconNav = document.getElementById("icon-nav");
+  const navdiv = document.querySelector(".navdiv");
+  let isNavdivVisible = false;
+
+  iconNav.addEventListener("click", () => {
+    if (isNavdivVisible) {
+      navdiv.style.left = "-270px";
+    } else {
+      navdiv.style.left = "200px"; 
+    }
+    
+    isNavdivVisible = !isNavdivVisible;
+  });
+});

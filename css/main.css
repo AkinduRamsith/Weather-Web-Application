@@ -65,6 +65,7 @@ html {
     margin-top: 3%;
     margin-left: 5%;
     cursor: pointer;
+    display: none;
 
 
 }
@@ -1417,7 +1418,9 @@ footer {
         width: 60px;
         margin-left: 1%;
     }
-
+    #icon-nav{
+        display: block;
+    }
     .navbar h2 {
         font-size: 0.7rem;
         line-height: 20px;
@@ -1428,12 +1431,16 @@ footer {
         width: 425px;
         /* border: 1px solid white; */
         margin-top: 13%;
-        margin-left: -36%;
+        margin-left: -47%;
         flex-direction: column;
         background-color: #090429f6;
         z-index: 1;
-        left: none;
+        /* left: none; */
         left: -270px;
+        transition: all .5s;
+    }
+    .navdiv .show{
+        left: none;
     }
 
     .signup {
@@ -1765,6 +1772,29 @@ footer {
         height: 40%;
         margin-top: 1%;
         margin-left: 0%;
+    }
+    .footer-right{
+        margin-top: -25%;
+    }
+    .p1{
+        font-size: 1.2rem;
+    }
+
+    .lbl-r a{
+        font-size: 1rem;
+    }
+    .social-media{
+        margin-top: 10%;
+    }
+    .line-hr{
+        margin-top: 10%;
+    }
+    .footer-d{
+        margin-top: 10%;
+    }
+
+    .searchbar::placeholder{
+        font-size: 0.7rem;
     }
 }
 
