@@ -29,6 +29,7 @@ function refreshTime() {
   };
   const dateString = new Date().toLocaleTimeString('en-US', options);
   timeDisplay.textContent = dateString;
+  
 }
 
 setInterval(refreshTime, 1000);
